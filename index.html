@@ -13,8 +13,8 @@
     </head>
 
     <body>
-      <h1>jokesOnYou</h1>
-  <h2>(A place for wannabe comedians to store, read/update and delete jokes)</h2>
+      <h1>jokesOnYou!</h1>
+  <h2>(A place where wannabe comedians can store, view, update and delete their jokes)</h2>
 
   <div id="auth-messages"></div>
 
@@ -52,5 +52,38 @@
       <input type="submit" value="Sign out">
     </fieldset>
   </form>
+
+  <form id="create-joke" class="border">
+    <fieldset>
+      <legend>Create Joke</legend>
+      <input type="text" name="Text" placeholder="Text Here">
+      <input type="submit" value="Create">
+    </fieldset>
+  </form>
+
+  <form id="get-jokes" class="border">
+    <fieldset>
+      <legend>Get All Jokes</legend>
+      <input type="text" name="Text" placeholder="Text Here">
+      <input type="submit" value="Get All">
+    </fieldset>
+  </form>
+
+  <form id="update-joke" class="border">
+    <fieldset>
+      <legend>Update Joke</legend>
+      <input type="text" name="Text" placeholder="Text Here">
+      <input type="submit" value="Update">
+    </fieldset>
+
+    <form id="delete-joke" class="border">
+      <fieldset>
+        <legend>Delete Joke</legend>
+        <input type="text" name="Text" placeholder="Text Here">
+        <input type="submit" value="Delete">
+      </fieldset>
+    </form>
+  </form>
+
     </body>
 </html>
