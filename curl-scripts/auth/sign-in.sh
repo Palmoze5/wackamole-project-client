@@ -1,4 +1,4 @@
-curl "https://localhost:4741/sign-in" \
+curl "http://morning-falls-75749/sign-in" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

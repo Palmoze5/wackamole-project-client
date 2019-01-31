@@ -14,10 +14,6 @@ const onSignUpSuccess = function (data) {
   hideAuthMessage()
   $('#sign-up')[0].reset()
   $('#sign-up').show()
-  $('#create-joke').hide()
-  $('#get-jokes').hide()
-  $('#update-joke').hide()
-  $('#delete-jokes').hide()
 }
 
 const onSignUpFailure = function () {
@@ -37,11 +33,11 @@ const onSignInSuccess = function (data) {
   $('#auth-messages').addClass('success')
   $('#auth-messages').removeClass('failure')
   hideAuthMessage()
-  $('#sign-in').hide()
-  $('#sign-up').hide()
   $('#sign-out').removeClass('hidden')
   $('#sign-out').show()
   $('#change-password').show()
+  $('#sign-in').hide()
+  $('#sign-up').hide()
 }
 
 const onSignInFailure = function () {
@@ -50,7 +46,6 @@ const onSignInFailure = function () {
   $('#sign-in')[0].reset()
   $('#auth-messages').addClass('failure')
   $('#auth-messages').css('display', 'inline')
-  $('#games-played').hide()
 }
 const onSignOutSuccess = function (data) {
   $('#auth-messages').css('display', 'inline')

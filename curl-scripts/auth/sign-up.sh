@@ -1,4 +1,4 @@
-curl 'https://morning-falls-75749/sign-up' \
+curl 'http://morning-falls-75749/sign-up' \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
