@@ -13,7 +13,8 @@ const onSignUpSuccess = function (data) {
   $('#auth-messages').text('Sign Up successful')
   hideAuthMessage()
   $('#sign-up')[0].reset()
-  $('#sign-up').show()
+  $('#create-joke').hide()
+  $('#sign-up').hide()
 }
 
 const onSignUpFailure = function () {
@@ -22,6 +23,7 @@ const onSignUpFailure = function () {
   $('#auth-messages').text('Error on Sign Up. Please, try again.')
   $('#sign-up')[0].reset()
   hideAuthMessage()
+  $('#create-joke').hide()
 }
 const onSignInSuccess = function (data) {
   store.user = data.user
@@ -38,6 +40,8 @@ const onSignInSuccess = function (data) {
   $('#change-password').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('#create-joke').show()
+  $('#create-joke').removeClass('hidden')
 }
 
 const onSignInFailure = function () {
@@ -46,6 +50,7 @@ const onSignInFailure = function () {
   $('#sign-in')[0].reset()
   $('#auth-messages').addClass('failure')
   $('#auth-messages').css('display', 'inline')
+  $('#create-joke').hide()
 }
 const onSignOutSuccess = function (data) {
   $('#auth-messages').css('display', 'inline')
@@ -60,6 +65,7 @@ const onSignOutSuccess = function (data) {
   $('#sign-in').show()
   $('#sign-out').hide()
   $('#change-password').hide()
+  $('#create-joke').hide()
 }
 
 const onSignOutFailure = function () {
@@ -68,6 +74,7 @@ const onSignOutFailure = function () {
   $('#auth-messages').text('Error On Sign Out')
   hideAuthMessage()
   $('#sign-out').addClass('failure')
+  $('#create-joke').show()
 }
 
 const onChangePassSuccess = function () {
@@ -78,6 +85,7 @@ const onChangePassSuccess = function () {
   hideAuthMessage()
   $('#auth-messages').css('display', 'inline')
   $('#sign-up').hide()
+  $('#create-joke').show()
 }
 
 const onChangePassFailure = function () {
@@ -86,6 +94,7 @@ const onChangePassFailure = function () {
   $('#auth-messages').text('Change Password Failure')
   hideAuthMessage()
   $('#change-password')[0].reset()
+  $('#create-joke').show()
 }
 module.exports = {
   onSignUpSuccess,
