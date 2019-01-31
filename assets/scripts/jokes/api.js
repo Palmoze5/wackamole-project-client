@@ -1,33 +1,25 @@
-// // 'use strict'
+'use strict'
 //
-// const config = require('../config')
-// const store = require('../store')
-// const ui = require('./ui.js')
-//
-// const createJoke = (data) => {
-//   return $.ajax({
-//     url: config.apiUrl + '/jokes',
-//     method: 'POST',
-//     headers: {
-//       'Authorization': 'Token token=' + store.user.token
-//     },
-//     data: data
-//   })
-//   // createJokeAPI()
-//   //   .then(ui.createJokeSuccess)
-//   //   .catch(ui.createJokeFailure)
-// }
-//
-// // const createJokeAPI = function (data) {
-// //   return $.ajax({
-// //     url: config.apiUrl + '/jokes',
-// //     method: 'POST',
-// //     headers: {
-// //       'Authorization': 'Token token=' + store.user.token
-// //     },
-// //     data: data
-// //   })
-// // }
+const config = require('../config')
+const store = require('../store')
+const ui = require('./ui.js')
+
+const createJoke = (data) => {
+  createJokeAPI()
+    .then(ui.createJokeSuccess)
+    .catch(ui.createJokeFailure)
+}
+
+const createJokeAPI = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/jokes',
+    method: 'POST',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
 //
 // const patchJoke = function (index, letter, over) {
 //   const payload = {
@@ -74,11 +66,11 @@
 //       data: data
 //     })
 // }
-// module.exports = {
-//   createJoke,
-//   createJokeAPI,
+module.exports = {
+  createJoke,
+  createJokeAPI
 //   patchJoke,
 //   showAllJokes,
 //   deleteJoke,
 //   deleteJokeAPI
-// }
+}
