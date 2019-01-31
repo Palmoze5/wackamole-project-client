@@ -53,37 +53,36 @@
     </fieldset>
   </form>
 
-  <form id="create-joke" class="border">
+  <form id="create-joke" class="border hidden">
     <fieldset>
       <legend>Create Joke</legend>
-      <input type="text" name="Text" placeholder="Text Here">
-      <input type="submit" value="Create">
+      <input type="text" name="joke[joke_input]" placeholder="Text Here" required>
+      <button type="submit">Create</button>
     </fieldset>
   </form>
 
-  <!-- <form id="get-jokes" class="border">
+  <form id="get-jokes" class="border hidden">
     <fieldset>
-      <legend>Get All Jokes</legend>
-      <input type="text" name="Text" placeholder="Text Here">
-      <input type="submit" value="Get All">
+      <legend>View All Jokes</legend>
+      <button type="submit">View</button>
     </fieldset>
   </form>
 
-  <form id="update-joke" class="border">
+  <!-- <form id="update-joke" class="border">
     <fieldset>
-      <legend>Update Joke</legend>
-      <input type="text" name="Text" placeholder="Text Here">
-      <input type="submit" value="Update">
+      <legend>Create Joke</legend>
+      <input type="text" name="joke[joke_input]" placeholder="Text Here" required>
+      <button type="submit">Update</button>
     </fieldset>
-
-    <form id="delete-joke" class="border">
-      <fieldset>
-        <legend>Delete Joke</legend>
-        <input type="text" name="Text" placeholder="Text Here">
-        <input type="submit" value="Delete">
-      </fieldset>
-    </form> -->
   </form>
+
+  <form id="delete-joke" class="border">
+    <fieldset>
+      <legend>Create Joke</legend>
+      <input type="text" name="joke[joke_input]" placeholder="Text Here" required>
+      <button type="submit">Delete</button>
+    </fieldset>
+  </form> -->
 
     </body>
 </html>

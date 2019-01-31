@@ -1,29 +1,30 @@
 // const store = require('../store.js')
-//
-// const hideAuthMessage = () => {
-//   setTimeout(() => {
-//     $('#auth-messages').hide()
-//   }, 3000)
-// }
-//
-// const onCreateJokeSuccess = function (data) {
-//   $('#auth-messages').show()
-//   $('#auth-messages').addClass('success')
-//   $('#auth-messages').removeClass('failure')
-//   $('#auth-messages').text('Created Joke was Successful!')
-//   hideAuthMessage()
-//   $('#sign-up')[0].reset()
-//   $('#sign-in').hide()
-//   $('#sign-up').hide()
-// }
-//
-// const onCreateJokeFailure = function () {
-//   $('#auth-messages').show()
-//   $('#auth-messages').addClass('failure')
-//   $('#auth-messages').text('ERROR on Creating Joke')
-//   $('#sign-up')[0].reset()
-//   hideAuthMessage()
-// }
+
+const hideAuthMessage = () => {
+  setTimeout(() => {
+    $('#auth-messages').hide()
+  }, 3000)
+}
+
+const onCreateJokeSuccess = function (data) {
+  $('#auth-messages').show()
+  $('#auth-messages').addClass('success')
+  $('#auth-messages').removeClass('failure')
+  $('#auth-messages').text('Created Joke was Successful!')
+  hideAuthMessage()
+  $('#sign-up')[0].reset()
+  $('#create-joke')[0].reset()
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+}
+
+const onCreateJokeFailure = function () {
+  $('#auth-messages').show()
+  $('#auth-messages').addClass('failure')
+  $('#auth-messages').text('ERROR on Creating Joke')
+  $('#sign-up')[0].reset()
+  hideAuthMessage()
+}
 // const onViewAllJokesSuccess = function (data) {
 //   store.user = data.user
 //   $('#reset').trigger('click')
@@ -89,13 +90,13 @@
 //   hideAuthMessage()
 //   $('#change-password')[0].reset()
 // }
-// module.exports = {
-//   onCreateJokeSuccess,
-//   onCreateJokeFailure,
+module.exports = {
+  onCreateJokeSuccess,
+  onCreateJokeFailure
 //   onViewAllJokesSuccess,
 //   onViewAllJokesFailure,
 //   onUpdateJokesSuccess,
 //   onUpdateJokesFailure,
 //   onDeleteJokesSuccess,
 //   onDeleteJokesFailure
-// }
+}
