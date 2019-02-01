@@ -2,20 +2,14 @@
 //
 const config = require('../config')
 const store = require('../store')
-const ui = require('./ui.js')
-
-const createJoke = (data) => {
-  createJokeAPI()
-    .then(ui.createJokeSuccess)
-    .catch(ui.createJokeFailure)
-}
+// const ui = require('./ui.js')
 
 const createJokeAPI = function (data) {
   return $.ajax({
     url: config.apiUrl + '/jokes',
     method: 'POST',
     headers: {
-      'Authorization': 'Token token=' + store.user.token
+      'Authorization': `Token token=${store.user.token}`
     },
     data: data
   })
@@ -41,8 +35,9 @@ const createJokeAPI = function (data) {
 //     data: payload
 //   })
 // }
-//
-const showAllJokes = function () {
+
+const viewAllJokesAPI = function () {
+  console.log('viewAllJokesAPI')
   return $.ajax({
     url: config.apiUrl + '/jokes',
     method: 'GET',
@@ -68,9 +63,8 @@ const showAllJokes = function () {
 //     })
 // }
 module.exports = {
-  createJoke,
   createJokeAPI,
-  showAllJokes
+  viewAllJokesAPI
 //   patchJoke,
 //   deleteJoke,
 //   deleteJokeAPI

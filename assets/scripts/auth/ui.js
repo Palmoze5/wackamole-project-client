@@ -27,6 +27,7 @@ const onSignUpFailure = function () {
 }
 const onSignInSuccess = function (data) {
   store.user = data.user
+  // console.log("after sign in user is ",store.user)
   $('#reset').trigger('click')
   $('#auth-messages').text('Sign In successful!')
   $('#auth-messages').css('font-size', '20px')
@@ -42,6 +43,7 @@ const onSignInSuccess = function (data) {
   $('#sign-up').hide()
   $('#create-joke').show()
   $('#create-joke').removeClass('hidden')
+  $('#get-jokes').show()
 }
 
 const onSignInFailure = function () {

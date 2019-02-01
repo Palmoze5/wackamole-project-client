@@ -5,6 +5,8 @@ const jokeEvents = require('./jokes/events.js')
 
 //
 //
+$('#get-jokes').hide()
+
 $(() => {
   authEvents.addHandlers()
   jokeEvents.addJokeHandlers()

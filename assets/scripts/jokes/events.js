@@ -4,6 +4,12 @@ const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields')
 // const jokeActions = require('./api')
 
+// const createJoke = (data) => {
+//   createJokeAPI()
+//     .then(ui.createJokeSuccess)
+//     .catch(ui.createJokeFailure)
+// }
+
 const onCreateJoke = function (event) {
   event.preventDefault()
 
@@ -16,8 +22,8 @@ const onCreateJoke = function (event) {
 const onViewAllJokes = function (event) {
   event.preventDefault()
 
-  const data = getFormFields(event.target)
-  api.viewAllJokes(data)
+  // const data = getFormFields(event.target)
+  api.viewAllJokesAPI()
     .then(ui.onViewAllJokesSuccess)
     .catch(ui.onViewAllJokesFailure)
 }
@@ -40,7 +46,7 @@ const onViewAllJokes = function (event) {
 // }
 const addJokeHandlers = function () {
   $('#create-joke').on('submit', onCreateJoke)
-//   $('#get-jokes').on('submit', onViewAllJokes)
+  $('#get-jokes').on('submit', onViewAllJokes)
 //   $('#update-joke').on('submit', onUpdateJoke)
 //   $('#delete-joke').on('submit', onDeleteJoke)
 }
