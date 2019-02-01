@@ -90,30 +90,31 @@ const onViewAllJokesFailure = function () {
 //   $('#sign-out').addClass('failure')
 // }
 //
-// const onDeleteJokesSuccess = function () {
-//   $('#change-password')[0].reset()
-//   $('#auth-messages').removeClass('failure')
-//   $('#auth-messages').addClass('success')
-//   $('#auth-messages').text('Deleted Joke SUCCESS!')
-//   hideAuthMessage()
-//   $('#auth-messages').css('display', 'inline')
-//   $('#sign-up').hide()
-// }
-//
-// const onDeleteJokesFailure = function () {
-//   $('#auth-messages').show()
-//   $('#auth-messages').addClass('failure')
-//   $('#auth-messages').text('ERROR on Deleting Joke')
-//   hideAuthMessage()
-//   $('#change-password')[0].reset()
-// }
+const onDeleteJokesSuccess = function () {
+  $('#change-password')[0].reset()
+  $('#auth-messages').removeClass('failure')
+  $('#auth-messages').addClass('success')
+  $('#auth-messages').text('Deleted Joke SUCCESS!')
+  hideAuthMessage()
+  $('#auth-messages').css('display', 'inline')
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+}
+
+const onDeleteJokesFailure = function () {
+  $('#auth-messages').show()
+  $('#auth-messages').addClass('failure')
+  $('#auth-messages').text('ERROR on Deleting Joke')
+  hideAuthMessage()
+  $('#change-password')[0].reset()
+}
 module.exports = {
   onCreateJokeSuccess,
   onCreateJokeFailure,
   onViewAllJokesSuccess,
-  onViewAllJokesFailure
+  onViewAllJokesFailure,
 //   onUpdateJokesSuccess,
 //   onUpdateJokesFailure,
-//   onDeleteJokesSuccess,
-//   onDeleteJokesFailure
+  onDeleteJokesSuccess,
+  onDeleteJokesFailure
 }
