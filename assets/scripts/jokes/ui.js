@@ -113,8 +113,8 @@ module.exports = {
   onCreateJokeFailure,
   onViewAllJokesSuccess,
   onViewAllJokesFailure,
-//   onUpdateJokesSuccess,
-//   onUpdateJokesFailure,
+  // onUpdateJokesSuccess,
+  // onUpdateJokesFailure,
   onDeleteJokesSuccess,
   onDeleteJokesFailure
 }
