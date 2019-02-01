@@ -5,13 +5,21 @@ const store = require('../store')
 // const ui = require('./ui.js')
 
 const createJokeAPI = function (data) {
+  // return $.ajax({
+  //   url: config.apiUrl + '/jokes',
+  //   method: 'POST',
+  //   headers: {
+  //     'Authorization': 'Token token=' + store.user.token
+  //   },
+  //   data: data
+  // })
   return $.ajax({
     url: config.apiUrl + '/jokes',
     method: 'POST',
     headers: {
-      'Authorization': `Token token=${store.user.token}`
+      'Authorization': 'Token token=' + store.user.token
     },
-    data: data
+    data
   })
 }
 //
@@ -46,26 +54,19 @@ const viewAllJokesAPI = function () {
     }
   })
 }
-// const deleteJoke = () => {
-//   deleteJokeAPI()
-//     .then(ui.deleteJokeSuccess)
-//     .catch(ui.deleteJokeFailure)
-// }
-//
-//   const deleteJokeAPI = function (data) {
-//     return $.ajax({
-//       url: config.apiUrl + '/jokes',
-//       method: 'DELETE',
-//       headers: {
-//         'Authorization': 'Token token=' + store.user.token
-//       },
-//       data: data
-//     })
-// }
+
+const deleteJokeAPI = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/jokes/' + id,
+    method: 'DELETE',
+    headers: {
+      'Authorization': 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   createJokeAPI,
-  viewAllJokesAPI
-//   patchJoke,
-//   deleteJoke,
-//   deleteJokeAPI
+  viewAllJokesAPI,
+  //   patchJoke,
+  deleteJokeAPI
 }

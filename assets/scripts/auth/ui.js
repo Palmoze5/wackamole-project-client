@@ -44,6 +44,7 @@ const onSignInSuccess = function (data) {
   $('#create-joke').show()
   $('#create-joke').removeClass('hidden')
   $('#get-jokes').show()
+  $('#delete-joke').show()
 }
 
 const onSignInFailure = function () {

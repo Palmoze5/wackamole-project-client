@@ -12,16 +12,17 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const onCreateJoke = function (event) {
   event.preventDefault()
-
   const data = getFormFields(event.target)
-  event.preventDefault()
+  console.log("create",data)
   api.createJokeAPI(data)
-    .then(ui.onCreateJokeSuccess)
+    // .then(ui.onCreateJokeSuccess)
+    .then(() => {
+      console.log("success")
+    })
     .catch(ui.onCreateJokeFailure)
 }
 const onViewAllJokes = function (event) {
   event.preventDefault()
-
   // const data = getFormFields(event.target)
   api.viewAllJokesAPI()
     .then(ui.onViewAllJokesSuccess)
@@ -36,25 +37,26 @@ const onViewAllJokes = function (event) {
 //     .catch(ui.onUpdateJokesFailure)
 // }
 //
-// const onDeleteJoke = function (event) {
-//   event.preventDefault()
-//
-//   const data = getFormFields(event.target)
-//   api.signOut(data)
-//     .then(ui.onDeleteJokesSuccess)
-//     .catch(ui.onDeleteJokesFailure)
-// }
+const onDeleteJoke = function (event) {
+  event.preventDefault()
+
+  const data = getFormFields(event.target).joke_input
+  console.log(data)
+  api.deleteJokeAPI(data)
+    .then(ui.onDeleteJokesSuccess)
+    .catch(ui.onDeleteJokesFailure)
+}
 const addJokeHandlers = function () {
   $('#create-joke').on('submit', onCreateJoke)
   $('#get-jokes').on('submit', onViewAllJokes)
-//   $('#update-joke').on('submit', onUpdateJoke)
-//   $('#delete-joke').on('submit', onDeleteJoke)
+  //   $('#update-joke').on('submit', onUpdateJoke)
+  $('#delete-joke').on('submit', onDeleteJoke)
 }
 //
 module.exports = {
   onCreateJoke,
   onViewAllJokes,
   //   onUpdateJoke,
-  //   onDeleteJoke,
+  onDeleteJoke,
   addJokeHandlers
 }
