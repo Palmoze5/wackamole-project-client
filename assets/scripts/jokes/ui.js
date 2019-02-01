@@ -1,4 +1,4 @@
-// const store = require('../store.js')
+const store = require('../store.js')
 
 const hideAuthMessage = () => {
   setTimeout(() => {
@@ -16,6 +16,7 @@ const onCreateJokeSuccess = function (data) {
   $('#create-joke')[0].reset()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('#get-jokes').show()
 }
 
 const onCreateJokeFailure = function () {
@@ -23,33 +24,35 @@ const onCreateJokeFailure = function () {
   $('#auth-messages').addClass('failure')
   $('#auth-messages').text('ERROR on Creating Joke')
   $('#sign-up')[0].reset()
+  $('#get-jokes').show()
   hideAuthMessage()
 }
-// const onViewAllJokesSuccess = function (data) {
-//   store.user = data.user
-//   $('#reset').trigger('click')
-//   $('#auth-messages').text('View All Jokes was Successful!')
-//   $('#auth-messages').css('font-size', '20px')
-//   $('#auth-messages').css('text-align', 'center')
-//   $('#auth-messages').show()
-//   $('#auth-messages').addClass('success')
-//   $('#auth-messages').removeClass('failure')
-//   hideAuthMessage()
-//   $('#sign-in').hide()
-//   $('#sign-up').hide()
-//   $('#sign-out').removeClass('hidden')
-//   $('#sign-out').show()
-//   $('#change-password').show()
-// }
-//
-// const onViewAllJokesFailure = function () {
-//   $('#auth-messages').text('ERROR on Viewing All Jokes.')
-//   $('#sign-in').show()
-//   $('#sign-in')[0].reset()
-//   $('#auth-messages').addClass('failure')
-//   $('#auth-messages').css('display', 'inline')
-//   $('#games-played').hide()
-// }
+const onViewAllJokesSuccess = function (data) {
+  store.user = data.user
+  $('#reset').trigger('click')
+  $('#auth-messages').text('View All Jokes was Successful!')
+  $('#auth-messages').css('font-size', '20px')
+  $('#auth-messages').css('text-align', 'center')
+  $('#auth-messages').show()
+  $('#auth-messages').addClass('success')
+  $('#auth-messages').removeClass('failure')
+  hideAuthMessage()
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#sign-out').removeClass('hidden')
+  $('#sign-out').show()
+  $('#change-password').show()
+  $('#get-jokes').show()
+}
+
+const onViewAllJokesFailure = function () {
+  $('#auth-messages').text('ERROR on Viewing All Jokes.')
+  $('#sign-in').show()
+  $('#sign-in')[0].reset()
+  $('#auth-messages').addClass('failure')
+  $('#auth-messages').css('display', 'inline')
+  $('#games-played').hide()
+}
 // const onUpdateJokesSuccess = function (data) {
 //   $('#auth-messages').css('display', 'inline')
 //   $('#auth-messages').addClass('success')
@@ -92,9 +95,9 @@ const onCreateJokeFailure = function () {
 // }
 module.exports = {
   onCreateJokeSuccess,
-  onCreateJokeFailure
-//   onViewAllJokesSuccess,
-//   onViewAllJokesFailure,
+  onCreateJokeFailure,
+  onViewAllJokesSuccess,
+  onViewAllJokesFailure
 //   onUpdateJokesSuccess,
 //   onUpdateJokesFailure,
 //   onDeleteJokesSuccess,

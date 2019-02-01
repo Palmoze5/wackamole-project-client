@@ -42,19 +42,20 @@ const createJokeAPI = function (data) {
 //   })
 // }
 //
-// const showAllJokes = function () {
-//   return $.ajax({
-//     url: config.apiUrl + '/jokes',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-//   const deleteJoke = () => {
-//     deleteJokeAPI()
-//       .then(ui.deleteJokeSuccess)
-//       .catch(ui.deleteJokeFailure)
-//   }
+const showAllJokes = function () {
+  return $.ajax({
+    url: config.apiUrl + '/jokes',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+// const deleteJoke = () => {
+//   deleteJokeAPI()
+//     .then(ui.deleteJokeSuccess)
+//     .catch(ui.deleteJokeFailure)
+// }
 //
 //   const deleteJokeAPI = function (data) {
 //     return $.ajax({
@@ -68,9 +69,9 @@ const createJokeAPI = function (data) {
 // }
 module.exports = {
   createJoke,
-  createJokeAPI
+  createJokeAPI,
+  showAllJokes
 //   patchJoke,
-//   showAllJokes,
 //   deleteJoke,
 //   deleteJokeAPI
 }

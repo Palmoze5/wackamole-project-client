@@ -13,14 +13,14 @@ const onCreateJoke = function (event) {
     .then(ui.onCreateJokeSuccess)
     .catch(ui.onCreateJokeFailure)
 }
-// const onViewAllJokes = function (event) {
-//   event.preventDefault()
-//
-//   const data = getFormFields(event.target)
-//   api.viewAllJokes(data)
-//     .then(ui.onViewAllJokesSuccess)
-//     .catch(ui.onViewAllJokesFailure)
-// }
+const onViewAllJokes = function (event) {
+  event.preventDefault()
+
+  const data = getFormFields(event.target)
+  api.viewAllJokes(data)
+    .then(ui.onViewAllJokesSuccess)
+    .catch(ui.onViewAllJokesFailure)
+}
 // const onUpdateJoke = function (event) {
 //   event.preventDefault()
 //
@@ -47,7 +47,7 @@ const addJokeHandlers = function () {
 //
 module.exports = {
   onCreateJoke,
-  //   onViewAllJokes,
+  onViewAllJokes,
   //   onUpdateJoke,
   //   onDeleteJoke,
   addJokeHandlers
