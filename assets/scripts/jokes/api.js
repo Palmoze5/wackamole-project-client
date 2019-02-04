@@ -2,7 +2,6 @@
 //
 const config = require('../config')
 const store = require('../store')
-const id = require('./events.js')
 
 const createJokeAPI = function (data) {
   return $.ajax({
