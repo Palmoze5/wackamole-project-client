@@ -20,6 +20,8 @@ const onCreateJokeSuccess = function (data) {
   hideAuthMessage()
   $('#auth-messages').css('display', 'inline')
   $('#sign-up')[0].reset()
+  $('#sign-in')[0].reset()
+  $('#create-joke')[0].reset()
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#get-jokes').show()

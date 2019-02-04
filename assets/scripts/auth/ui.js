@@ -44,6 +44,7 @@ const onSignInSuccess = function (data) {
   $('#create-joke').show()
   $('#create-joke').removeClass('hidden')
   $('#get-jokes').show()
+  $('#update-joke').show()
   $('#delete-joke').show()
 }
 
@@ -59,7 +60,7 @@ const onSignOutSuccess = function (data) {
   $('#auth-messages').css('display', 'inline')
   $('#auth-messages').addClass('success')
   $('#auth-messages').text('Sign Out Successful')
-  $('#auth-messages').hide()
+  $('#auth-messages').show()
   hideAuthMessage()
   $('#sign-up')[0].reset()
   $('#sign-up').show()

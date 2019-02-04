@@ -25,7 +25,7 @@ const onUpdateJoke = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-  const id = data.joke.joke_input
+  const id = data.joke_input
   console.log(id)
   console.log(data)
   api.updateJokeAPI(data, id)
