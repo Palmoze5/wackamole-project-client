@@ -69,6 +69,10 @@ const onSignOutSuccess = function (data) {
   $('#sign-out').hide()
   $('#change-password').hide()
   $('#create-joke').hide()
+  $('#get-jokes').hide()
+  $('#update-joke').hide()
+  $('#delete-joke').hide()
+  $('#joke-area').hide()
 }
 
 const onSignOutFailure = function () {

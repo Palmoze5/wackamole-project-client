@@ -55,7 +55,7 @@
 
   <form id="create-joke" class="border hidden">
     <fieldset>
-      <legend>Create Joke</legend>
+      <legend>Create A Joke</legend>
       <input type="text" name="joke[joke_input]" placeholder="Text Here" required>
       <button type="submit">Create</button>
     </fieldset>
@@ -64,34 +64,27 @@
 
       <form id="get-jokes" class="border hidden">
         <fieldset>
-          <legend>View Jokes</legend>
+          <legend>View All Jokes Created</legend>
           <button type="submit">View</button>
         </fieldset>
       </form>
-      <div id="joke-area">
+      <div id="joke-area"></div>
 
-      </div>
-
-      <!-- <form id="update-joke" class="border hidden">
+      <form id="update-joke" class="border">
         <fieldset>
-          <legend>Update Joke</legend>
-          <input type="text" name="joke[joke_input]" placeholder="Text Here" required>
+          <legend>Update A Joke</legend>
+          <input type="text" name="joke[joke_input]" placeholder="Type ID Number" required>
+          <input type="text" name="joke[joke_input]" placeholder="Add New Joke" required>
           <button type="submit">Update</button>
         </fieldset>
-      </form> -->
+      </form>
 
-      <!-- <form id="update-joke" class="border hidden">
-        <fieldset>
-          <legend>Update Joke</legend>
-          <input type="text" name="joke[joke_input]" placeholder="Text Here" required>
-          <button type="submit">Update</button>
-        </fieldset>
-      </form> -->
-
+<div id="delete-message"></div>
       <form id="delete-joke" class="border hidden">
         <fieldset>
-          <legend>Delete Jokes</legend>
-          <input type="text" name="joke_input" placeholder="text">
+          <legend>Delete Joke</legend>
+          <legend>(Delete Joke by ID number, then click 'View' to see changes)</legend>
+          <input type="text" name="joke_input" placeholder="Text Here" required>
           <button type="submit">Delete</button>
         </fieldset>
       </form>
