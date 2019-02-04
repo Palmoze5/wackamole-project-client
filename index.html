@@ -53,6 +53,7 @@
     </fieldset>
   </form>
 
+<div id="create-message"></div>
   <form id="create-joke" class="border hidden">
     <fieldset>
       <legend>Create A Joke</legend>
@@ -61,7 +62,7 @@
     </fieldset>
   </form>
 
-
+<div id="view-message"></div>
       <form id="get-jokes" class="border hidden">
         <fieldset>
           <legend>View All Jokes Created</legend>
@@ -70,9 +71,11 @@
       </form>
       <div id="joke-area"></div>
 
+<div id="update-message"></div>
       <form id="update-joke" class="border">
         <fieldset>
           <legend>Update A Joke</legend>
+          <legend>(Update then click 'View' to see changes)</legend>
           <input type="text" name="text" placeholder="Type ID Number" required>
           <input type="text" name="joke[joke_input]" placeholder="Add New Joke" required>
           <button type="submit">Update</button>
