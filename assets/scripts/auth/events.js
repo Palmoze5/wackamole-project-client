@@ -1,6 +1,6 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
-const store = require('./ui.js')
+// const store = require('./ui.js')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const onSignUp = function (event) {
@@ -11,7 +11,7 @@ const onSignUp = function (event) {
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
 
-    $('#form').trigger('reset')
+  $('#form').trigger('reset')
 }
 const onSignIn = function (event) {
   event.preventDefault()
@@ -20,7 +20,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
-    $('form').trigger('reset')
+  $('form').trigger('reset')
 }
 const onChangePass = function (event) {
   event.preventDefault()
@@ -29,17 +29,16 @@ const onChangePass = function (event) {
   api.changePass(data)
     .then(ui.onChangePassSuccess)
     .catch(ui.onChangePassFailure)
-    $('form').trigger('reset')
+  $('form').trigger('reset')
 }
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log(store.user)
   const data = getFormFields(event.target)
   api.signOut(data)
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
-    $('form').trigger('reset')
+  $('form').trigger('reset')
 }
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)

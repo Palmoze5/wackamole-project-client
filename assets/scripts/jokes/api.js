@@ -28,7 +28,6 @@ const updateJokeAPI = function (data, id) {
 }
 
 const viewAllJokesAPI = function () {
-  console.log('viewAllJokesAPI')
   return $.ajax({
     url: config.apiUrl + '/jokes',
     method: 'GET',

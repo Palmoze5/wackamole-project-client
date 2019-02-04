@@ -11,7 +11,6 @@ const hideMessage = () => {
   }, 3000)
 }
 const onCreateJokeSuccess = function (data) {
-  console.log('onCreateJoke Success worked!')
   // $('#create-joke').trigger('reset')
   $('#auth-messages').show()
   $('#auth-messages').addClass('success')
@@ -110,7 +109,6 @@ const onDeleteJokesSuccess = function () {
   $('#auth-messages').css('display', 'inline')
   $('#sign-up').hide()
   $('#sign-in').hide()
-  // $('#delete-message').addClass('success')
   $('#delete-message').html('Deleted Joke Successful!')
   $('#delete-message').css('font-size', '20px')
   $('#delete-message').css('text-align', 'center')

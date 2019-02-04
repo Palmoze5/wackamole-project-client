@@ -7,11 +7,9 @@ const getFormFields = require('../../../lib/get-form-fields')
 const onCreateJoke = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('create', data)
   api.createJokeAPI(data)
     // .then(ui.onCreateJokeSuccess)
     .then(() => {
-      console.log('success')
     })
     .catch(ui.onCreateJokeFailure)
   $('form').trigger('reset')
@@ -21,7 +19,7 @@ const onViewAllJokes = function (event) {
   api.viewAllJokesAPI()
     .then(ui.onViewAllJokesSuccess)
     .catch(ui.onViewAllJokesFailure)
-    $('form').trigger('reset')
+  $('form').trigger('reset')
 }
 const onUpdateJoke = function (event) {
   event.preventDefault()
