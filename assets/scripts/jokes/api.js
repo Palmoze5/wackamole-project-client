@@ -15,7 +15,7 @@ const createJokeAPI = function (data) {
   })
 }
 
-const updateJokeAPI = function (data) {
+const updateJokeAPI = function (data, id) {
   return $.ajax({
     url: config.apiUrl + '/jokes/' + id,
     method: 'PATCH',

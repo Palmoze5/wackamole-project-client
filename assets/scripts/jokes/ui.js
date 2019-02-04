@@ -12,7 +12,7 @@ const hideMessage = () => {
 }
 const onCreateJokeSuccess = function (data) {
   console.log('onCreateJoke Success worked!')
-  $('#create-joke').trigger('reset')
+  // $('#create-joke').trigger('reset')
   $('#auth-messages').show()
   $('#auth-messages').addClass('success')
   $('#auth-messages').removeClass('failure')
@@ -21,7 +21,7 @@ const onCreateJokeSuccess = function (data) {
   $('#auth-messages').css('display', 'inline')
   $('#sign-up')[0].reset()
   $('#sign-in')[0].reset()
-  $('#create-joke')[0].reset()
+  // $('#create-joke')[0].reset()
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#get-jokes').show()
@@ -56,6 +56,7 @@ const onViewAllJokesSuccess = function (response, data) {
   $('#sign-out').show()
   $('#change-password').show()
   $('#show-jokes-message').show()
+  $('#joke-area').show()
   response.jokes.forEach(function (joke) {
     const jokehtml = `
       <h4 id="show-jokes-message">ID # ${joke.id}: ${joke.joke_input}</h4>
@@ -109,10 +110,11 @@ const onDeleteJokesSuccess = function () {
   $('#auth-messages').css('display', 'inline')
   $('#sign-up').hide()
   $('#sign-in').hide()
-  $('#delete-message').addClass('success')
+  // $('#delete-message').addClass('success')
   $('#delete-message').html('Deleted Joke Successful!')
   $('#delete-message').css('font-size', '20px')
   $('#delete-message').css('text-align', 'center')
+  $('#delete-message').css('color', 'green')
   hideMessage()
 }
 

@@ -14,23 +14,24 @@ const onCreateJoke = function (event) {
       console.log('success')
     })
     .catch(ui.onCreateJokeFailure)
+  $('form').trigger('reset')
 }
 const onViewAllJokes = function (event) {
   event.preventDefault()
   api.viewAllJokesAPI()
     .then(ui.onViewAllJokesSuccess)
     .catch(ui.onViewAllJokesFailure)
+    $('form').trigger('reset')
 }
 const onUpdateJoke = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-  const id = data.joke_input
-  console.log(id)
-  console.log(data)
+  const id = data.text
   api.updateJokeAPI(data, id)
     .then(ui.onUpdateJokesSuccess)
     .catch(ui.onUpdateJokesFailure)
+  $('form').trigger('reset')
 }
 
 const onDeleteJoke = function (event) {
@@ -40,6 +41,7 @@ const onDeleteJoke = function (event) {
   api.deleteJokeAPI(data)
     .then(ui.onDeleteJokesSuccess)
     .catch(ui.onDeleteJokesFailure)
+  $('form').trigger('reset')
 }
 const addJokeHandlers = function () {
   $('#create-joke').on('submit', onCreateJoke)

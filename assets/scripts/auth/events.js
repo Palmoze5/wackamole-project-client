@@ -10,6 +10,8 @@ const onSignUp = function (event) {
   api.signUp(data)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
+
+    $('#form').trigger('reset')
 }
 const onSignIn = function (event) {
   event.preventDefault()
@@ -18,6 +20,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
+    $('form').trigger('reset')
 }
 const onChangePass = function (event) {
   event.preventDefault()
@@ -26,6 +29,7 @@ const onChangePass = function (event) {
   api.changePass(data)
     .then(ui.onChangePassSuccess)
     .catch(ui.onChangePassFailure)
+    $('form').trigger('reset')
 }
 
 const onSignOut = function (event) {
@@ -35,6 +39,7 @@ const onSignOut = function (event) {
   api.signOut(data)
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
+    $('form').trigger('reset')
 }
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
