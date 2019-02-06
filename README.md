@@ -16,6 +16,24 @@ Make API for front end and back end
 Make a repository for both front end and back end
 via heroku and github
 
+### Work flow - Planning and Development
+1.) I developed an ERD of the one user to many jokes diagram
+2.) I wrote out user stories (link is below):
+a.) For authorizations
+b.) For creating, viewing, updating and deleting their jokes
+3.) Created a wireframe of several pages describing the user
+experience and interface (view link below)
+4.) I utilized notes taken from General Assembly
+5.) Worked on the back end first
+6.) Worked on the front end second
+7.) Within the front end, I worked on each folder and file
+one at a time.
+8.) The process would entail, work on one part of a feature (e.g.
+sign up), then test.
+9.) Add and commit on a success on feature
+10.) Push to the remote repository
+11.) Any issues would utilize outside sources (notes, google, then General Assembly issue queue)
+
 ## Technologies Used
 HTML
 CSS
@@ -26,7 +44,7 @@ Bootstrap
 Ajax
 
 
-## User Stories
+### User Stories
 1.) As a user, I want to be able to < sign up > so that < I can have a User ID to be able to Sign In to Create, Read (view one or all), Update and Delete my jokes under my profile.>
 2.) As a user, I want to be able to < Sign In > so that < whenever I log in, anything that I Created, Updated or Deleted would be remembered under my User ID.
 3.) As a user, once i’ve signed up and signed in with a User ID  I want to be able to < change my password > so that < I can change my password that’s either memorable or in case I am worried about misplacing my password or sharing my password unknowingly >.
@@ -36,9 +54,21 @@ Ajax
 7.) As a user, I want to be able to < have an Update button > so that < I can add onto already existing jokes to my user ID >
 8.) As a user, I want to be able to < have a Delete button > for jokes I hated, so that < I can delete jokes from my jokes list >
 
-## Wireframes & ERD
-Wireframe Link: https://imgur.com/a/uM4BJUM
-ERD link: https://i.imgur.com/kiXLFxR.jpg
+### Links to Live & Front/Back End Repositories
+# API Repo:
+https://github.com/Palmoze5/jokesonyou-api
+# API Deployed:
+https://morning-falls-75749.herokuapp.com/
+# Client repository on Github:
+https://github.com/Palmoze5/jokesonyou-client
+# Live Hosted client site:
+https://anthonypalmoze.com/jokesonyou-client/
+
+### Wireframes & ERD
+# Wireframe Link:
+https://imgur.com/a/uM4BJUM
+# ERD link:
+https://i.imgur.com/kiXLFxR.jpg
 
 ## Future considerations:
 1.) Better front facing User Interface and experience

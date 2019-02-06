@@ -8,9 +8,7 @@ const onCreateJoke = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.createJokeAPI(data)
-    // .then(ui.onCreateJokeSuccess)
-    .then(() => {
-    })
+    .then(ui.onCreateJokeSuccess)
     .catch(ui.onCreateJokeFailure)
   $('form').trigger('reset')
 }

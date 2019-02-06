@@ -14,7 +14,7 @@ const onSignUpSuccess = function (data) {
   hideAuthMessage()
   $('#sign-up')[0].reset()
   $('#create-joke').hide()
-  $('#sign-up').hide()
+  // $('#sign-up').hide()
 }
 
 const onSignUpFailure = function () {
@@ -27,6 +27,7 @@ const onSignUpFailure = function () {
 }
 const onSignInSuccess = function (data) {
   store.user = data.user
+  // console.log("after sign in user is ",store.user)
   $('#reset').trigger('click')
   $('#auth-messages').text('Sign In successful!')
   $('#auth-messages').css('font-size', '20px')
@@ -49,21 +50,25 @@ const onSignInSuccess = function (data) {
 
 const onSignInFailure = function () {
   $('#auth-messages').text('Error on Sign In. Please try again.')
+  $('#auth-messages').css('text-align', 'center')
   $('#sign-in').show()
   $('#sign-in')[0].reset()
+  $('#sign-up').show()
+  $('#sign-up')[0].reset()
+  hideAuthMessage()
   $('#auth-messages').addClass('failure')
-  $('#auth-messages').css('display', 'inline')
+  $('#auth-messages').removeClass('success')
   $('#create-joke').hide()
 }
 const onSignOutSuccess = function (data) {
-  $('#auth-messages').css('display', 'inline')
-  $('#auth-messages').addClass('success')
   $('#auth-messages').text('Sign Out Successful')
+  $('#auth-messages').css('text-align', 'center')
+  $('#auth-messages').addClass('success')
   $('#auth-messages').show()
   hideAuthMessage()
   $('#sign-up')[0].reset()
   $('#sign-up').show()
-  $('#sign-up').removeClass('success')
+  $('#sign-up').removeClass('failure')
   $('#sign-in')[0].reset()
   $('#sign-in').show()
   $('#sign-out').hide()
@@ -85,12 +90,15 @@ const onSignOutFailure = function () {
 }
 
 const onChangePassSuccess = function () {
-  $('#change-password')[0].reset()
-  $('#auth-messages').removeClass('failure')
-  $('#auth-messages').addClass('success')
+  $('#reset').trigger('click')
+  // $('#change-password')[0].reset()
   $('#auth-messages').text('Change Password SUCCESS!')
+  $('#auth-messages').addClass('success')
+  $('#auth-messages').css('text-align', 'center')
+  $('#auth-messages').css('color', 'green')
+  $('#auth-messages').css('font-size', '20px')
+  $('#auth-messages').removeClass('failure')
   hideAuthMessage()
-  $('#auth-messages').css('display', 'inline')
   $('#sign-up').hide()
   $('#create-joke').show()
 }
