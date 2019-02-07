@@ -83,6 +83,7 @@ const onViewAllJokesSuccess = function (response, data) {
 }
 
 const onViewAllJokesFailure = function () {
+  $('#auth-messages').show()
   $('#auth-messages').text('ERROR on Viewing All Jokes.')
   hideAuthMessage()
   $('#sign-in').show()
@@ -91,24 +92,20 @@ const onViewAllJokesFailure = function () {
   $('#auth-messages').css('display', 'inline')
 }
 const onUpdateJokesSuccess = function (data) {
-  $('#auth-messages').css('display', 'inline')
-  $('#auth-messages').addClass('success')
-  $('#auth-messages').text('Update Joke Successful')
-  $('#auth-messages').hide()
-  hideUpdateMessage()
-  $('#sign-up')[0].reset()
-  $('#sign-up').show()
-  $('#sign-up').removeClass('success')
-  $('#sign-in')[0].reset()
-  $('#sign-in').show()
-  $('#sign-out').hide()
-  $('#change-password').show()
   $('#update-message').show()
   $('#update-message').html('Update Joke Successful!')
   $('#update-message').css('font-size', '20px')
   $('#update-message').css('text-align', 'center')
   $('#update-message').css('color', 'green')
   $('#update-message').addClass('success')
+  hideUpdateMessage()
+  $('#sign-up')[0].reset()
+  $('#sign-up').hide()
+  $('#sign-up').removeClass('success')
+  $('#sign-in')[0].reset()
+  $('#sign-in').hide()
+  $('#sign-out').show()
+  $('#change-password').show()
 }
 
 const onUpdateJokesFailure = function () {
@@ -116,17 +113,10 @@ const onUpdateJokesFailure = function () {
   $('#auth-messages').addClass('failure')
   $('#auth-messages').text('ERROR On Updating Joke')
   hideAuthMessage()
-  $('#sign-out').addClass('failure')
 }
 
 const onDeleteJokesSuccess = function () {
-  $('#change-password')[0].reset()
   $('#delete-joke')[0].reset()
-  $('#auth-messages').removeClass('failure')
-  $('#auth-messages').addClass('success')
-  $('#auth-messages').text('Deleted Joke SUCCESS!')
-  hideAuthMessage()
-  $('#auth-messages').css('display', 'inline')
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#delete-message').show()
@@ -136,6 +126,9 @@ const onDeleteJokesSuccess = function () {
   $('#delete-message').css('color', 'green')
   $('#delete-message').addClass('success')
   hideMessage()
+  $('#change-password')[0].reset()
+  $('#change-password').show()
+  $('#sign-out').show()
 }
 
 const onDeleteJokesFailure = function () {

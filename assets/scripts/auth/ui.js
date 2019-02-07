@@ -48,20 +48,21 @@ const onSignInSuccess = function (data) {
 
 const onSignInFailure = function () {
   $('#auth-messages').text('Error on Sign In. Please try again.')
+  $('#auth-messages').addClass('failure')
   $('#auth-messages').css('text-align', 'center')
+  $('#auth-messages').removeClass('success')
   $('#sign-in').show()
   $('#sign-in')[0].reset()
   $('#sign-up').show()
   $('#sign-up')[0].reset()
   hideAuthMessage()
-  $('#auth-messages').addClass('failure')
-  $('#auth-messages').removeClass('success')
   $('#create-joke').hide()
 }
 const onSignOutSuccess = function (data) {
   $('#auth-messages').text('Sign Out Successful')
   $('#auth-messages').css('text-align', 'center')
   $('#auth-messages').addClass('success')
+  $('#auth-messages').removeClass('failure')
   $('#auth-messages').show()
   hideAuthMessage()
   $('#sign-up')[0].reset()
@@ -83,11 +84,11 @@ const onSignOutFailure = function () {
   $('#auth-messages').addClass('failure')
   $('#auth-messages').text('Error On Sign Out')
   hideAuthMessage()
-  $('#sign-out').addClass('failure')
   $('#create-joke').show()
 }
 
 const onChangePassSuccess = function () {
+  $('#auth-messages').show()
   $('#reset').trigger('click')
   $('#auth-messages').text('Change Password SUCCESS!')
   $('#auth-messages').addClass('success')
@@ -103,7 +104,11 @@ const onChangePassSuccess = function () {
 const onChangePassFailure = function () {
   $('#auth-messages').show()
   $('#auth-messages').addClass('failure')
+  $('#auth-messages').css('text-align', 'center')
+  $('#auth-messages').css('color', 'green')
+  $('#auth-messages').css('font-size', '20px')
   $('#auth-messages').text('Change Password Failure')
+  $('#auth-messages').removeClass('success')
   hideAuthMessage()
   $('#change-password')[0].reset()
   $('#create-joke').show()
