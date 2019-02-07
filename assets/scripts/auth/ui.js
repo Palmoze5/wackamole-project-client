@@ -47,11 +47,12 @@ const onSignInSuccess = function (data) {
 }
 
 const onSignInFailure = function () {
+  $('#sign-in').show()
+  $('#auth-messages').show()
   $('#auth-messages').text('Error on Sign In. Please try again.')
   $('#auth-messages').addClass('failure')
   $('#auth-messages').css('text-align', 'center')
   $('#auth-messages').removeClass('success')
-  $('#sign-in').show()
   $('#sign-in')[0].reset()
   $('#sign-up').show()
   $('#sign-up')[0].reset()
