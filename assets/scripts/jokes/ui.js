@@ -1,5 +1,6 @@
 // const store = require('../store.js')
 
+// Variables made to hide messages after a certain milisecond
 const hideAuthMessage = () => {
   setTimeout(() => {
     $('#auth-messages').hide()
@@ -26,6 +27,8 @@ const hideUpdateMessage = () => {
     $('#update-message').hide()
   }, 3000)
 }
+
+// Success and failure notifications for the user
 const onCreateJokeSuccess = function (data) {
   // $('#create-joke').trigger('reset')
   $('#create-message').show()
@@ -55,7 +58,7 @@ const onCreateJokeFailure = function () {
 const onViewAllJokesSuccess = function (response, data) {
   $('#view-message').show()
   $('#reset').trigger('click')
-  $('#view-message').text('text View All Jokes was Successful!')
+  $('#view-message').text('View All Jokes was Successful!')
   $('#view-message').css('font-size', '20px')
   $('#view-message').css('text-align', 'center')
   $('#view-message').css('color', 'green')
@@ -68,6 +71,8 @@ const onViewAllJokesSuccess = function (response, data) {
   $('#change-password').show()
   $('#show-jokes-message').show()
   $('#joke-area').show()
+  // Made a function that will display each ID in HTML but will display below
+  // the success notification to user
   response.jokes.forEach(function (joke) {
     const jokehtml = `
       <h4 id="show-jokes-message">ID # ${joke.id}: ${joke.joke_input}</h4>

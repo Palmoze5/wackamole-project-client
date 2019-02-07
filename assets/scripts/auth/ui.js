@@ -14,7 +14,6 @@ const onSignUpSuccess = function (data) {
   hideAuthMessage()
   $('#sign-up')[0].reset()
   $('#create-joke').hide()
-  // $('#sign-up').hide()
 }
 
 const onSignUpFailure = function () {
@@ -27,7 +26,6 @@ const onSignUpFailure = function () {
 }
 const onSignInSuccess = function (data) {
   store.user = data.user
-  // console.log("after sign in user is ",store.user)
   $('#reset').trigger('click')
   $('#auth-messages').text('Sign In successful!')
   $('#auth-messages').css('font-size', '20px')
@@ -91,7 +89,6 @@ const onSignOutFailure = function () {
 
 const onChangePassSuccess = function () {
   $('#reset').trigger('click')
-  // $('#change-password')[0].reset()
   $('#auth-messages').text('Change Password SUCCESS!')
   $('#auth-messages').addClass('success')
   $('#auth-messages').css('text-align', 'center')

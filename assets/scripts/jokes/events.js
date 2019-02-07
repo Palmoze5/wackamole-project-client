@@ -2,7 +2,6 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 // const store = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields')
-// const jokeActions = require('./api')
 
 const onCreateJoke = function (event) {
   event.preventDefault()
@@ -39,6 +38,8 @@ const onDeleteJoke = function (event) {
     .catch(ui.onDeleteJokesFailure)
   $('form').trigger('reset')
 }
+
+// Click Event handlers for Creating, Reading All, Updating and Deleteing Jokes
 const addJokeHandlers = function () {
   $('#create-joke').on('submit', onCreateJoke)
   $('#get-jokes').on('submit', onViewAllJokes)

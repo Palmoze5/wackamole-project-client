@@ -57,7 +57,7 @@
 <h4 class="user-message"></h4>
   <form id="create-joke" class="border hidden">
     <fieldset>
-      <legend>Create A Joke</legend>
+      <legend>Create Your Own Joke</legend>
       <input type="text" name="joke[joke_input]" placeholder="Text Here" required>
       <button type="submit">Create</button>
     </fieldset>
@@ -67,7 +67,7 @@
       <form id="get-jokes" class="border hidden">
         <fieldset>
           <legend>View All Jokes Created</legend>
-          <h6><legend>(You can view these jokes created in random order)</legend></h6>
+          <h6><legend>(You can view jokes displayed in random order)</legend></h6>
           <button type="submit">View</button>
         </fieldset>
       </form>
@@ -76,7 +76,7 @@
 <div id="update-message"></div>
       <form id="update-joke" class="border">
         <fieldset>
-          <legend>Update A Joke</legend>
+          <legend>Update the Joke You Created</legend>
           <legend>(Update then click 'View' to see changes)</legend>
           <input type="text" name="text" placeholder="Type ID Number" required>
           <input type="text" name="joke[joke_input]" placeholder="Add New Joke" required>
@@ -87,7 +87,7 @@
 <div id="delete-message"></div>
       <form id="delete-joke" class="border hidden">
         <fieldset>
-          <legend>Delete Joke</legend>
+          <legend>Delete A Joke You Created</legend>
           <legend>(Delete Joke by ID number, then click 'View' to see changes)</legend>
           <input type="text" name="joke_input" placeholder="Text Here" required>
           <button type="submit">Delete</button>

@@ -40,6 +40,7 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutFailure)
   $('form').trigger('reset')
 }
+// Event handlers for authorization buttons
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
