@@ -71,6 +71,8 @@ const onViewAllJokesSuccess = function (response, data) {
   $('#change-password').show()
   $('#show-jokes-message').show()
   $('#joke-area').show()
+  $('#joke-area').html('')
+
   // Made a function that will display each ID in HTML but will display below
   // the success notification to user
   response.jokes.forEach(function (joke) {
