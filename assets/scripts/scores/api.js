@@ -3,9 +3,9 @@
 const config = require('../config')
 const store = require('../store')
 
-const createJokeAPI = function (data) {
+const createScoreAPI = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/jokes',
+    url: config.apiUrl + '/scores',
     method: 'POST',
     headers: {
       'Authorization': 'Token token=' + store.user.token
@@ -14,9 +14,9 @@ const createJokeAPI = function (data) {
   })
 }
 
-const updateJokeAPI = function (data, id) {
+const updateScoreAPI = function (data, id) {
   return $.ajax({
-    url: config.apiUrl + '/jokes/' + id,
+    url: config.apiUrl + '/scores/' + id,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',
@@ -26,9 +26,9 @@ const updateJokeAPI = function (data, id) {
   })
 }
 
-const viewAllJokesAPI = function () {
+const viewAllScoresAPI = function () {
   return $.ajax({
-    url: config.apiUrl + '/jokes',
+    url: config.apiUrl + '/scores',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -36,9 +36,9 @@ const viewAllJokesAPI = function () {
   })
 }
 
-const deleteJokeAPI = function (id) {
+const deleteScoreAPI = function (id) {
   return $.ajax({
-    url: config.apiUrl + '/jokes/' + id,
+    url: config.apiUrl + '/scores/' + id,
     method: 'DELETE',
     headers: {
       'Authorization': 'Token token=' + store.user.token
@@ -46,8 +46,8 @@ const deleteJokeAPI = function (id) {
   })
 }
 module.exports = {
-  createJokeAPI,
-  viewAllJokesAPI,
-  updateJokeAPI,
-  deleteJokeAPI
+  createScoreAPI,
+  viewAllScoresAPI,
+  updateScoreAPI,
+  deleteScoreAPI
 }

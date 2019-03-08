@@ -13,7 +13,7 @@ const onSignUpSuccess = function (data) {
   $('#auth-messages').text('Sign Up successful')
   hideAuthMessage()
   $('#sign-up')[0].reset()
-  $('#create-joke').hide()
+  $('#create-score').hide()
 }
 
 const onSignUpFailure = function () {
@@ -23,7 +23,7 @@ const onSignUpFailure = function () {
   $('#sign-up')[0].reset()
   $('#sign-in')[0].reset()
   hideAuthMessage()
-  $('#create-joke').hide()
+  $('#create-score').hide()
 }
 const onSignInSuccess = function (data) {
   store.user = data.user
@@ -40,11 +40,11 @@ const onSignInSuccess = function (data) {
   $('#change-password').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
-  $('#create-joke').show()
-  $('#create-joke').removeClass('hidden')
-  $('#get-jokes').show()
-  $('#update-joke').show()
-  $('#delete-joke').show()
+  $('#create-score').show()
+  $('#create-score').removeClass('hidden')
+  $('#get-scores').show()
+  $('#update-score').show()
+  $('#delete-score').show()
 }
 
 const onSignInFailure = function () {
@@ -58,7 +58,7 @@ const onSignInFailure = function () {
   $('#sign-up').show()
   $('#sign-up')[0].reset()
   hideAuthMessage()
-  $('#create-joke').hide()
+  $('#create-score').hide()
 }
 const onSignOutSuccess = function (data) {
   $('#auth-messages').text('Sign Out Successful')
@@ -74,11 +74,11 @@ const onSignOutSuccess = function (data) {
   $('#sign-in').show()
   $('#sign-out').hide()
   $('#change-password').hide()
-  $('#create-joke').hide()
-  $('#get-jokes').hide()
-  $('#update-joke').hide()
-  $('#delete-joke').hide()
-  $('#joke-area').hide()
+  $('#create-score').hide()
+  $('#get-scores').hide()
+  $('#update-score').hide()
+  $('#delete-score').hide()
+  $('#score-area').hide()
 }
 
 const onSignOutFailure = function () {
@@ -86,7 +86,7 @@ const onSignOutFailure = function () {
   $('#auth-messages').addClass('failure')
   $('#auth-messages').text('Error On Sign Out')
   hideAuthMessage()
-  $('#create-joke').show()
+  $('#create-score').show()
 }
 
 const onChangePassSuccess = function () {
@@ -100,7 +100,7 @@ const onChangePassSuccess = function () {
   $('#auth-messages').removeClass('failure')
   hideAuthMessage()
   $('#sign-up').hide()
-  $('#create-joke').show()
+  $('#create-score').show()
 }
 
 const onChangePassFailure = function () {
@@ -113,7 +113,7 @@ const onChangePassFailure = function () {
   $('#auth-messages').removeClass('success')
   hideAuthMessage()
   $('#change-password')[0].reset()
-  $('#create-joke').show()
+  $('#create-score').show()
 }
 module.exports = {
   onSignUpSuccess,

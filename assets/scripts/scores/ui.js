@@ -29,37 +29,37 @@ const hideUpdateMessage = () => {
 }
 
 // Success and failure notifications for the user
-const onCreateJokeSuccess = function (data) {
-  // $('#create-joke').trigger('reset')
+const onCreateScoreSuccess = function (data) {
+  // $('#create-score').trigger('reset')
   $('#create-message').show()
   $('#create-message').addClass('success')
   $('#create-message').removeClass('failure')
-  $('#create-message').text('Created Joke was Successful!')
+  $('#create-message').text('Created Score was Successful!')
   $('#create-message').css('font-size', '20px')
   $('#create-message').css('text-align', 'center')
-  $('#create-joke')[0].reset()
+  $('#create-score')[0].reset()
   hideCreateMessage()
   $('#sign-up')[0].reset()
   $('#sign-in')[0].reset()
   $('#sign-in').hide()
   $('#sign-up').hide()
-  $('#get-jokes').show()
-  $('#update-joke').show()
+  $('#get-scores').show()
+  $('#update-score').show()
 }
 
-const onCreateJokeFailure = function () {
+const onCreateScoreFailure = function () {
   $('#create-message').show()
   $('#create-message').addClass('failure')
   $('#create-message').removeClass('success')
-  $('#create-message').text('ERROR on Creating Joke')
+  $('#create-message').text('ERROR on Creating Score')
   $('#sign-up')[0].reset()
-  $('#get-jokes').hide()
+  $('#get-scores').hide()
   hideAuthMessage()
 }
-const onViewAllJokesSuccess = function (response, data) {
+const onViewAllScoresSuccess = function (response, data) {
   $('#view-message').show()
   $('#reset').trigger('click')
-  $('#view-message').text('View All Jokes was Successful!')
+  $('#view-message').text('View All Scores was Successful!')
   $('#view-message').css('font-size', '20px')
   $('#view-message').css('text-align', 'center')
   $('#view-message').css('color', 'black')
@@ -71,24 +71,24 @@ const onViewAllJokesSuccess = function (response, data) {
   $('#sign-out').removeClass('hidden')
   $('#sign-out').show()
   $('#change-password').show()
-  $('#show-jokes-message').show()
-  $('#joke-area').show()
-  $('#joke-area').html('')
+  $('#show-scores-message').show()
+  $('#score-area').show()
+  $('#score-area').html('')
 
   // Made a function that will display each ID in HTML but will display below
   // the success notification to user
-  response.jokes.forEach(function (joke) {
-    const jokehtml = `
-      <h4 id="show-jokes-message">ID # ${joke.id}: ${joke.joke_input}</h4>
+  response.scores.forEach(function (score) {
+    const scorehtml = `
+      <h4 id="show-scores-message">ID # ${score.id}: ${score.number}</h4>
     `
-    $('#joke-area').append(jokehtml)
+    $('#score-area').append(scorehtml)
   })
-  $('#show-jokes-message').css('text-align', 'center')
+  $('#show-scores-message').css('text-align', 'center')
 }
 
-const onViewAllJokesFailure = function () {
+const onViewAllScoresFailure = function () {
   $('#view-message').show()
-  $('#view-message').text('ERROR on Viewing All Jokes.')
+  $('#view-message').text('ERROR on Viewing All Scores.')
   hideAuthMessage()
   $('#sign-in').show()
   $('#sign-in')[0].reset()
@@ -98,9 +98,9 @@ const onViewAllJokesFailure = function () {
   $('#view-message').css('text-align', 'center')
   $('#view-message').css('color', 'black')
 }
-const onUpdateJokesSuccess = function (data) {
+const onUpdateScoresSuccess = function (data) {
   $('#update-message').show()
-  $('#update-message').html('Update Joke Successful!')
+  $('#update-message').html('Update Score Successful!')
   $('#update-message').css('font-size', '20px')
   $('#update-message').css('text-align', 'center')
   $('#update-message').css('color', 'black')
@@ -115,9 +115,9 @@ const onUpdateJokesSuccess = function (data) {
   $('#change-password').show()
 }
 
-const onUpdateJokesFailure = function () {
+const onUpdateScoresFailure = function () {
   $('#update-message').show()
-  $('#update-message').html('Failure on Updating Joke')
+  $('#update-message').html('Failure on Updating Score')
   $('#update-message').css('font-size', '20px')
   $('#update-message').css('text-align', 'center')
   $('#update-message').css('color', 'black')
@@ -126,12 +126,12 @@ const onUpdateJokesFailure = function () {
   hideUpdateMessage()
 }
 
-const onDeleteJokesSuccess = function () {
-  $('#delete-joke')[0].reset()
+const onDeleteScoresSuccess = function () {
+  $('#delete-score')[0].reset()
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#delete-message').show()
-  $('#delete-message').html('Deleted Joke Successful!')
+  $('#delete-message').html('Deleted Score Successful!')
   $('#delete-message').css('font-size', '20px')
   $('#delete-message').css('text-align', 'center')
   $('#delete-message').css('color', 'black')
@@ -143,9 +143,9 @@ const onDeleteJokesSuccess = function () {
   $('#sign-out').show()
 }
 
-const onDeleteJokesFailure = function () {
+const onDeleteScoresFailure = function () {
   $('#delete-message').show()
-  $('#delete-message').html('Failure on Deleting Joke')
+  $('#delete-message').html('Failure on Deleting Score')
   $('#delete-message').css('font-size', '20px')
   $('#delete-message').css('text-align', 'center')
   $('#delete-message').css('color', 'black')
@@ -155,12 +155,12 @@ const onDeleteJokesFailure = function () {
   $('#change-password')[0].reset()
 }
 module.exports = {
-  onCreateJokeSuccess,
-  onCreateJokeFailure,
-  onViewAllJokesSuccess,
-  onViewAllJokesFailure,
-  onUpdateJokesSuccess,
-  onUpdateJokesFailure,
-  onDeleteJokesSuccess,
-  onDeleteJokesFailure
+  onCreateScoreSuccess,
+  onCreateScoreFailure,
+  onViewAllScoresSuccess,
+  onViewAllScoresFailure,
+  onUpdateScoresSuccess,
+  onUpdateScoresFailure,
+  onDeleteScoresSuccess,
+  onDeleteScoresFailure
 }

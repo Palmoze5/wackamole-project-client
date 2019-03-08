@@ -1,14 +1,14 @@
 'use strict'
 
 const authEvents = require('./auth/events.js')
-const jokeEvents = require('./jokes/events.js')
+const scoreEvents = require('./scores/events.js')
 
 //
 //
-$('#get-jokes').hide()
-$('#update-joke').hide()
+$('#get-scores').hide()
+$('#update-score').hide()
 
 $(() => {
   authEvents.addHandlers()
-  jokeEvents.addJokeHandlers()
+  scoreEvents.addScoreHandlers()
 })

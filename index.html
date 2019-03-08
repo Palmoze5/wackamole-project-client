@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Jokes On You</title>
+      <title>Wack-A-Mole</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,8 +13,8 @@
     </head>
 
     <body>
-      <h1>jokesOnYou!</h1>
-  <h2>(A place where wannabe comedians can make, view, update and delete their jokes)</h2>
+      <h1>Wack-A-Mole</h1>
+  <h2>A fun game!</h2>
 
   <div id="auth-messages"></div>
 
@@ -55,41 +55,41 @@
 
 <div id="create-message"></div>
 <h4 class="user-message"></h4>
-  <form id="create-joke" class="border hidden">
+  <form id="create-score" class="border hidden">
     <fieldset>
-      <legend>Create Your Own Joke</legend>
-      <input type="text" name="joke[joke_input]" placeholder="Text Here" required>
+      <legend>Create Your Score</legend>
+      <input type="text" name="score[number]" placeholder="Number Here" required>
       <button type="submit">Create</button>
     </fieldset>
   </form>
 
 <div id="view-message"></div>
-      <form id="get-jokes" class="border hidden">
+      <form id="get-scores" class="border hidden">
         <fieldset>
-          <legend>View All Jokes Created</legend>
-          <h6><legend>(You can view jokes displayed in random order)</legend></h6>
+          <legend>View All Scores Created</legend>
+          <h6><legend>(You can view scores displayed in random order)</legend></h6>
           <button type="submit">View</button>
         </fieldset>
       </form>
-      <div id="joke-area"></div>
+      <div id="score-area"></div>
 
 <div id="update-message"></div>
-      <form id="update-joke" class="border">
+      <form id="update-score" class="border">
         <fieldset>
-          <legend>Update the Joke You Created</legend>
+          <legend>Update the Score You Created</legend>
           <legend>(Update then click 'View' to see changes)</legend>
           <input type="text" name="text" placeholder="Type ID Number" required>
-          <input type="text" name="joke[joke_input]" placeholder="Add New Joke" required>
+          <input type="text" name="score[number]" placeholder="Add New Score" required>
           <button type="submit">Update</button>
         </fieldset>
       </form>
 
 <div id="delete-message"></div>
-      <form id="delete-joke" class="border hidden">
+      <form id="delete-score" class="border hidden">
         <fieldset>
-          <legend>Delete A Joke You Created</legend>
-          <legend>(Delete Joke by ID number, then click 'View' to see changes)</legend>
-          <input type="text" name="joke_input" placeholder="Text Here" required>
+          <legend>Delete A Score You Created</legend>
+          <legend>(Delete Score by ID number, then click 'View' to see changes)</legend>
+          <input type="text" name="number" placeholder="Text Here" required>
           <button type="submit">Delete</button>
         </fieldset>
       </form>
