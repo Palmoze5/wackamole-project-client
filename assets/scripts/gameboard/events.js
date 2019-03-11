@@ -4,7 +4,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('./ui.js')
 const gameActions = require('./api')
-const createGameFile = require('../gameboard/api')
+const createGameFile = require('./api')
 
 store.turn = 1
 
