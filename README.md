@@ -31,12 +31,12 @@ sign-up, sign-out, gameboard, scores), then test.
 11.) Any issues would utilize outside sources (notes, google, then General Assembly issue queue)
 
 ## Technologies Used
-HTML
-CSS
-JavaScript
-React
-Axios
-Rails
+HTML,
+CSS,
+JavaScript,
+React,
+Axios,
+Rails.
 
 ## User Stories
 1.) As a user, I want to be able to < sign up & sign in > so that < I can play the wackamole game.
