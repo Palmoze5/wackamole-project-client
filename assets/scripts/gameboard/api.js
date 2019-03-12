@@ -18,16 +18,15 @@ const createGameAPI = function (data) {
       'Authorization': 'Token token=' + store.user.token
     },
     data: data
+
   })
 }
 
-const patchGame = function (index, letter, over) {
+const patchGame = function (over) {
+  console.log(store)
   const payload = {
     'game': {
-      'cell': {
-        'index': index,
-        'value': letter
-      },
+      'points': 1,
       'over': over
     }
   }

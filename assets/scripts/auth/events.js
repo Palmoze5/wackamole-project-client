@@ -1,7 +1,9 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
-// const store = require('./ui.js')
+const store = require('./ui.js')
 const getFormFields = require(`../../../lib/get-form-fields`)
+
+store.gameBoard = ['', '', '', '', '', '', '', '', '']
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -15,6 +17,7 @@ const onSignUp = function (event) {
 }
 const onSignIn = function (event) {
   event.preventDefault()
+  $('.game-board').removeClass('display')
 
   const data = getFormFields(event.target)
   api.signIn(data)
@@ -34,6 +37,7 @@ const onChangePass = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
+
   const data = getFormFields(event.target)
   api.signOut(data)
     .then(ui.onSignOutSuccess)

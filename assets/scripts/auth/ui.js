@@ -1,5 +1,5 @@
 const store = require('../store.js')
-
+const createGame = require('../gameboard/api')
 const hideAuthMessage = () => {
   setTimeout(() => {
     $('#auth-messages').hide()
@@ -34,6 +34,8 @@ const onSignInSuccess = function (data) {
   $('#auth-messages').show()
   $('#auth-messages').addClass('success')
   $('#auth-messages').removeClass('failure')
+  $('.game-board').show()
+  $('#games-played').show()
   hideAuthMessage()
   $('#sign-out').removeClass('hidden')
   $('#sign-out').show()
@@ -45,6 +47,7 @@ const onSignInSuccess = function (data) {
   $('#get-scores').show()
   $('#update-score').show()
   $('#delete-score').show()
+  createGame.createGame(data)
 }
 
 const onSignInFailure = function () {
@@ -59,6 +62,7 @@ const onSignInFailure = function () {
   $('#sign-up')[0].reset()
   hideAuthMessage()
   $('#create-score').hide()
+  $('#games-played').hide()
 }
 const onSignOutSuccess = function (data) {
   $('#auth-messages').text('Sign Out Successful')
@@ -79,6 +83,11 @@ const onSignOutSuccess = function (data) {
   $('#update-score').hide()
   $('#delete-score').hide()
   $('#score-area').hide()
+  $('.game-board').hide()
+  $('#game-message').removeClass('success')
+  $('#game-message').hide()
+  $('#games-played-message').hide()
+  $('#games-played-message').removeClass('success')
 }
 
 const onSignOutFailure = function () {
@@ -115,6 +124,20 @@ const onChangePassFailure = function () {
   $('#change-password')[0].reset()
   $('#create-score').show()
 }
+const onShowAllGamesSuccess = function () {
+  $('#games-played').show()
+  $('#games-played-message').removeClass('hidden')
+  $('#games-played-message').addClass('success')
+  $('#games-played-message').text('Here are the total games played on your account: ')
+}
+
+const onShowAllGamesFailure = function () {
+  $('#auth-messages').show()
+  $('#auth-messages').addClass('failure')
+  $('#auth-messages').text('Error on Sign Up. Please, try again.')
+  hideAuthMessage()
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -123,5 +146,7 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onChangePassSuccess,
-  onChangePassFailure
+  onChangePassFailure,
+  onShowAllGamesSuccess,
+  onShowAllGamesFailure
 }

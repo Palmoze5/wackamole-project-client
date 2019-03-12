@@ -54,16 +54,17 @@ Rails.
 ### API Repo:
 https://github.com/Palmoze5/wackamole-project-api
 ### API Deployed:
-https://morning-falls-75749.herokuapp.com/
+https://serene-reef-91665.herokuapp.com
 ### Client repository on Github:
 https://github.com/Palmoze5/wackamole-project-client
 ### Live Hosted client site:
+https://anthonypalmoze.com/wackamole-project-client/
 
 ## Wireframes & ERD
 ### Wireframe Link:
-
+https://imgur.com/a/e28jpn8
 ## ERD link:
-
+https://imgur.com/bjvb3Cb
 
 ## Future considerations:
 1.) Better front facing User Interface and experience

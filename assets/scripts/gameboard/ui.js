@@ -14,7 +14,7 @@ const createGameSuccess = function (data) {
   $('#game-message').css('background-color', '#8fff90')
   $('#game-message').css('font-size', '20px')
   $('#game-message').css('text-align', 'center')
-  store.game = data.game
+  store.game = data
 }
 
 const createGameFailure = function () {
@@ -38,7 +38,7 @@ const createGameFailure = function () {
 const updateGameSuccess = function (data) {
   $('#message').text('Game Updated Successfully')
   $('#message').css('background-color', '#8fff90')
-  store.game = data.game
+  store.game = data
 }
 
 const updateGameFailure = function () {
@@ -48,7 +48,7 @@ const updateGameFailure = function () {
 
 const onShowAllGamesSuccess = function (response) {
   $('#games-played-message').show()
-  $('#games-played-message').text('Games Played: ' + response.games.length)
+  $('#games-played-message').text('Games Played: ' + response.length)
   $('#games-played-message').css('background-color', '#8fff90')
   $('#games-played-message').css('text-align', 'center')
 }
