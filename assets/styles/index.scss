@@ -67,7 +67,11 @@ button {
   max-width: 500px;
 }
 
-.col-4 {
+.comment-button {
+  display: inline;
+}
+
+.col-4,  {
   align-items: center;
   border-bottom: 1px solid;
   border-right: 1px solid;
@@ -88,3 +92,27 @@ button {
   justify-content: center;
   border: 20px 30px;
 }
+//
+//   .mole-pic {
+// 	width: 80px;
+// 	position: absolute;
+// 	left: 50px;
+// 	bottom: -78px;
+// 	transition: bottom 0.5s ease;
+// }
+//   .dirt-pic {
+//   	position: absolute;
+//   	bottom: 0;
+//   	left: 0;
+//   	z-index: 9999;
+//   }
+//
+//   .mask {
+//   	position: absolute;
+//   	bottom: 0;
+//   	left: 0;
+//   	height: 30px;
+//   	width: 100%;
+//   	background-color: white;
+//   	z-index: 5000;
+//   }

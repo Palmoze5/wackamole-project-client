@@ -14,7 +14,7 @@ const createGameSuccess = function (data) {
   $('#game-message').css('background-color', '#8fff90')
   $('#game-message').css('font-size', '20px')
   $('#game-message').css('text-align', 'center')
-  store.game = data
+  store.game = data.game
 }
 
 const createGameFailure = function () {
@@ -38,7 +38,7 @@ const createGameFailure = function () {
 const updateGameSuccess = function (data) {
   $('#message').text('Game Updated Successfully')
   $('#message').css('background-color', '#8fff90')
-  store.game = data
+  store.game = data.game
 }
 
 const updateGameFailure = function () {
@@ -47,10 +47,17 @@ const updateGameFailure = function () {
 }
 
 const onShowAllGamesSuccess = function (response) {
+  console.log(response)
   $('#games-played-message').show()
-  $('#games-played-message').text('Games Played: ' + response.length)
+  $('#leader-board-title').text('Games Played: ' + response.games.length)
   $('#games-played-message').css('background-color', '#8fff90')
-  $('#games-played-message').css('text-align', 'center')
+  // $('#games-played-message').css('text-align', 'center')
+  for (let i = 0; i < response.games.length; i++) {
+    const points = response.games[i].points
+    const email = response.games[i].user.email
+    $('#leader-board').append(`<p>${email}: ${points}
+      <button class="comment-button">Comment</button></p>`)
+  }
 }
 
 const onShowAllGamesFailure = function () {
