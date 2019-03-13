@@ -6,10 +6,10 @@ const getFormFields = require('../../../lib/get-form-fields')
 const onCreateComment = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
-  console.log(event)
+  console.log('onCreateComment DATA events ', data)
+  console.log('onCreateComment EVENT events', event)
   const gameId = event.target.dataset.formid
-  api.createComment(data, gameId)
+  api.patchComment(data, gameId)
   $(this).trigger('reset')
 }
 const onViewAllComments = function (event) {
