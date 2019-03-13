@@ -4,24 +4,24 @@ const config = require('../config')
 const store = require('../store')
 const ui = require('./ui.js')
 
-const createGame = () => {
-  createGameAPI()
-    .then(ui.createGameSuccess)
-    .catch(ui.createGameFailure)
+const createComment = function (data, gameId) {
+  createCommentAPI(data, gameId)
+    .then(ui.createCommentSuccess)
+    .catch(ui.createCommentFailure)
 }
-
-const createGameAPI = function (data) {
+const createCommentAPI = function (data, gameId) {
+  const commentData = {comment: data}
   return $.ajax({
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + `/games/${gameId}/comments`,
     method: 'POST',
     headers: {
       'Authorization': 'Token token=' + store.user.token
     },
-    data: data
+    data: commentData
   })
 }
 
-const patchGame = function (over) {
+const patchComment = function (over) {
   console.log(store)
   const payload = {
     'game': {
@@ -30,7 +30,7 @@ const patchGame = function (over) {
     }
   }
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.game.id,
+    url: config.apiUrl + '/comments/' + store.game.id,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',
@@ -40,7 +40,7 @@ const patchGame = function (over) {
   })
 }
 
-const showAllGames = function () {
+const showAllComments = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
@@ -50,8 +50,8 @@ const showAllGames = function () {
   })
 }
 module.exports = {
-  createGame,
-  createGameAPI,
-  patchGame,
-  showAllGames
+  createComment,
+  createCommentAPI,
+  patchComment,
+  showAllComments
 }

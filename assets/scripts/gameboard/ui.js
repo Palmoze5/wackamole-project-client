@@ -55,8 +55,9 @@ const onShowAllGamesSuccess = function (response) {
   for (let i = 0; i < response.games.length; i++) {
     const points = response.games[i].points
     const email = response.games[i].user.email
-    $('#leader-board').append(`<p>${email}: ${points}
-      <button class="comment-button">Comment</button></p>`)
+    const gameId = response.games[i].id
+    $('#leader-board').append(`<p data-gameid="${gameId}">${email}: ${points}
+      <button class="comment-button" data-buttonid="${gameId}">Comment</button></p>`)
   }
 }
 
