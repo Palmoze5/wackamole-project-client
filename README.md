@@ -72,6 +72,29 @@ https://imgur.com/a/xPhwjF4
 ## ERD image link:
 https://i.imgur.com/GYzwv5H.jpg
 
+## Setup & Installation instructions for this repo (front end)
+### 1.) Fork and clone the API repository in the
+### 2.) Wackamole-project-api link (listed above)
+### 3.) Please run in your terminal the command
+```
+npm start
+```
+### then
+```
+grunt serve
+```
+### 4.) Ensure that you have a local host :7165 opened
+
+## Setup & Installation instructions for this repo (back end)
+### 1.) Fork and clone the API repository in the
+### 2.) Wackamole-project-api link (listed above)
+### 3.) Please run in your terminal the command
+
+```
+rails s
+```
+### 4.) Ensure that you have a local host :4741 opened
+
 ## Future considerations:
 #### 1.) Better front facing user interface and user experience
 #### a.) Better looking fonts, background, buttons
