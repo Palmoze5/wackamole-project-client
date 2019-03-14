@@ -1,14 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 
-$background-color: #56B000;
+$background-color: #56b000;
 $white: #fff;
 $grey: rgb(128, 128, 128);
 $font-color: #fc0;
 $black: #000;
 $dark-yellow: #fc0;
-$mocassin: #ffe4B5;
-$red: #DC143C;
-$blue: #0000FF;
+$mocassin: #ffe4b5;
+$red: #dc143c;
+$blue: #0000ff;
 
 body {
   background-color: $background-color;
@@ -76,31 +76,32 @@ button {
 }
 
 .comment-button {
-  display: inline;
-  margin-right: 10px;
-  font-size: 20px;
-  padding: 10px;
   background-color: $blue;
   color: $white;
+  display: inline;
+  font-size: 20px;
+  margin-right: 10px;
+  padding: 10px;
 }
 
 .delete-button {
-  display: inline;
-  margin-right: 10px;
-  font-size: 20px;
-  padding: 10px;
   background-color: $red;
   color: $white;
+  display: inline;
+  font-size: 20px;
+  margin-right: 10px;
+  padding: 10px;
 }
+
 .comment-text {
   background-color: $mocassin;
-  margin-left: 30px;
   font-size: 24px;
+  margin-left: 30px;
 }
 
 .comment-wrapper {
-padding: 15px;
-font-size: 26px;
+  font-size: 26px;
+  padding: 15px;
 }
 
 .col-4,  {
@@ -122,29 +123,5 @@ font-size: 26px;
   display: flex;
   height: 10rem;
   justify-content: center;
-  border: 20px 30px;
+  border: 20px 30px solid $black;
 }
-//
-//   .mole-pic {
-// 	width: 80px;
-// 	position: absolute;
-// 	left: 50px;
-// 	bottom: -78px;
-// 	transition: bottom 0.5s ease;
-// }
-//   .dirt-pic {
-//   	position: absolute;
-//   	bottom: 0;
-//   	left: 0;
-//   	z-index: 9999;
-//   }
-//
-//   .mask {
-//   	position: absolute;
-//   	bottom: 0;
-//   	left: 0;
-//   	height: 30px;
-//   	width: 100%;
-//   	background-color: white;
-//   	z-index: 5000;
-//   }

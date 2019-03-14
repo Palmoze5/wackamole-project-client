@@ -21,18 +21,6 @@ const createGameFailure = function () {
   $('#message').text('Create Game Failed - Try Again')
   $('#message').css('background-color', '#ff91A3')
 }
-// Get Games
-// const getGamesSuccess = function (data) {
-//   console.log('data is ', data)
-//   $('#game-message').text('Total Games for User ' + store.user.id + ': ' + data.games.length).css('font-weight', 'bold')
-//   $('#games-played').show()
-//   store.game = data.game
-// }
-//
-// const getGamesFailure = function () {
-//   $('#message').text('Getting Games Failed - Try Again')
-//   $('#message').css('background-color', '#ff91A3')
-// }
 
 // change password messages
 const updateGameSuccess = function (data) {
