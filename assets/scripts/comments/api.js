@@ -5,7 +5,7 @@ const store = require('../store')
 const ui = require('./ui.js')
 
 const createComment = function (data, gameId) {
-  console.log('create comment ', data)
+  console.log('createComment in API.js ', data)
   createCommentAPI(data, gameId)
     .then(ui.createCommentSuccess)
     .catch(ui.createCommentFailure)
@@ -22,16 +22,15 @@ const createCommentAPI = function (data, gameId) {
   })
 }
 
-const patchComment = function (over) {
-  console.log(store)
+const patchComment = function (data, gameId) {
+  console.log('patchComment in Api.js ', data)
   const payload = {
     'game': {
-      'points': 1,
-      'over': over
+      'comment': data.text
     }
   }
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.game.id,
+    url: config.apiUrl + '/games/' + gameId,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',

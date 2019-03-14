@@ -80,12 +80,27 @@ const onBoxClick = function (event) {
   //   (count % 2 === 1)
   // }
 }
+const onDeleteGame = function (event) {
+  event.preventDefault()
+  const conf = confirm('Are you sure you want to delete this game?')
+  if (conf) {
+    const gameId = event.target.dataset.deleteid
+    api.deleteGame(gameId)
+      .then(ui.onDeleteGameSuccess)
+      .catch(ui.onDeleteGameFailure)
+  }
+}
+
+const addDeleteHandlers = function () {
+  $('.delete-button').click(onDeleteGame)
+}
 
 const onShowAllGames = function (event) {
   event.preventDefault()
   api.showAllGames()
     .then(ui.onShowAllGamesSuccess)
     .then(commentEvents.addCommentHandlers)
+    .then(addDeleteHandlers)
     .catch(ui.onShowAllGamesFailure)
 }
 const addGameHandlers = function () {

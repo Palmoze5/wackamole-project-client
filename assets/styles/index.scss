@@ -6,6 +6,9 @@ $grey: rgb(128, 128, 128);
 $font-color: #fc0;
 $black: #000;
 $dark-yellow: #fc0;
+$mocassin: #ffe4B5;
+$red: #DC143C;
+$blue: #0000FF;
 
 body {
   background-color: $background-color;
@@ -43,6 +46,11 @@ legend {
   text-align: center;
 }
 
+.game-div {
+  background-color: $dark-yellow;
+  border: 1px solid;
+}
+
 .success {
   background-color: $green;
   font-size: 15px;
@@ -69,6 +77,30 @@ button {
 
 .comment-button {
   display: inline;
+  margin-right: 10px;
+  font-size: 20px;
+  padding: 10px;
+  background-color: $blue;
+  color: $white;
+}
+
+.delete-button {
+  display: inline;
+  margin-right: 10px;
+  font-size: 20px;
+  padding: 10px;
+  background-color: $red;
+  color: $white;
+}
+.comment-text {
+  background-color: $mocassin;
+  margin-left: 30px;
+  font-size: 24px;
+}
+
+.comment-wrapper {
+padding: 15px;
+font-size: 26px;
 }
 
 .col-4,  {

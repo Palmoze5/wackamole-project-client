@@ -47,17 +47,27 @@ const updateGameFailure = function () {
 }
 
 const onShowAllGamesSuccess = function (response) {
-  console.log(response)
+  console.log('onShowAllGamesSuccess in Games UI.js ', response)
   $('#games-played-message').show()
   $('#leader-board-title').text('Games Played: ' + response.games.length)
   $('#games-played-message').css('background-color', '#8fff90')
   // $('#games-played-message').css('text-align', 'center')
   for (let i = 0; i < response.games.length; i++) {
+    console.log(response.games[i])
     const points = response.games[i].points
     const email = response.games[i].user.email
+    const userId = response.games[i].user.id
     const gameId = response.games[i].id
-    $('#leader-board').append(`<p data-gameid="${gameId}">${email}: ${points}
-      <button class="comment-button" data-buttonid="${gameId}">Comment</button></p>`)
+    const comment = response.games[i].comment
+    let commentButton = ''
+    let deleteButton = ''
+    if (store.user.id === userId) {
+      const buttonText = comment ? 'Update Comment' : 'New Comment'
+      commentButton = `<button class="comment-button" data-buttonid="${gameId}">${buttonText}</button>`
+      deleteButton = `<button class="delete-button" data-deleteid="${gameId}">Delete Game</button>`
+    }
+    $('#leader-board').append(`<div class="game-div"><p class="comment-wrapper" data-gameid="${gameId}">${email}: ${points}</p>${commentButton}${deleteButton}
+      <p class="comment-text" data-commentid="${gameId}">${comment || ''}</p></div>`)
   }
 }
 
@@ -68,11 +78,22 @@ const onShowAllGamesFailure = function () {
   hideAuthMessage()
 }
 
+const onDeleteGameSuccess = function (data) {
+  const gameId = data.game.id
+  $(`*[data-gameid="${gameId}"]`).parent().remove()
+}
+
+const onDeleteGameFailure = function () {
+  alert('Delete FAILED!!')
+}
+
 module.exports = {
   createGameSuccess,
   createGameFailure,
   updateGameSuccess,
   updateGameFailure,
   onShowAllGamesSuccess,
-  onShowAllGamesFailure
+  onShowAllGamesFailure,
+  onDeleteGameSuccess,
+  onDeleteGameFailure
 }

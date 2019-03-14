@@ -22,7 +22,7 @@ const createGameAPI = function (data) {
 }
 
 const patchGame = function (over) {
-  console.log(store)
+  console.log('patchGame in Games api.js', store)
   const payload = {
     'game': {
       'points': 1,
@@ -49,9 +49,20 @@ const showAllGames = function () {
     }
   })
 }
+
+const deleteGame = function (gameId) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + gameId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   createGame,
   createGameAPI,
   patchGame,
-  showAllGames
+  showAllGames,
+  deleteGame
 }

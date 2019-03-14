@@ -1,4 +1,4 @@
-curl 'https://morning-falls-75749/change-password' \
+curl 'https://localhost:4741/change-password' \
 --include \
 --request PATCH \
 --header "Content-Type: application/json" \
