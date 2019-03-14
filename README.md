@@ -71,6 +71,8 @@ https://anthonypalmoze.com/wackamole-project-client/
 https://imgur.com/a/xPhwjF4
 ## ERD image link:
 https://i.imgur.com/GYzwv5H.jpg
+### Screen shots of application:
+https://imgur.com/a/V3ybhZo
 
 ## Setup & Installation instructions for this repo (front end)
 ### 1.) Fork and clone the API repository in the
