@@ -47,13 +47,11 @@ const updateGameFailure = function () {
 }
 
 const onShowAllGamesSuccess = function (response) {
-  console.log('onShowAllGamesSuccess in Games UI.js ', response)
   $('#games-played-message').show()
   $('#leader-board-title').text('Leader Score board')
   $('#games-played-message').css('background-color', '#8fff90')
   // for loop that goes through the games array and iterates in each property
   for (let i = 0; i < response.games.length; i++) {
-    console.log(response.games[i])
     // defined variables which pull from the games array each property and gives
     // a value
     const points = response.games[i].points

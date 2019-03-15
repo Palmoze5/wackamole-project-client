@@ -22,7 +22,6 @@ const createGameAPI = function (data) {
 }
 
 const patchGame = function (over) {
-  console.log('patchGame in Games api.js', store)
   const payload = {
     'game': {
       'points': 1,

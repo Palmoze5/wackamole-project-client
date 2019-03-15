@@ -5,7 +5,6 @@ const store = require('../store')
 const ui = require('./ui.js')
 
 const createComment = function (data, gameId) {
-  console.log('createComment in API.js ', data)
   createCommentAPI(data, gameId)
     .then(ui.createCommentSuccess)
     .catch(ui.createCommentFailure)
@@ -23,7 +22,6 @@ const createCommentAPI = function (data, gameId) {
 }
 
 const patchComment = function (data, gameId) {
-  console.log('patchComment in Api.js ', data)
   const payload = {
     'game': {
       'comment': data.text

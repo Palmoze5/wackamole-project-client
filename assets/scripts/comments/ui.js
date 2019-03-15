@@ -13,8 +13,6 @@ const showCommentForm = function (gameId) {
   }
 }
 const onCreateCommentSuccess = function (response) {
-  console.log('onCreateCommentSuccess! ui.js, ')
-  console.log(response)
   $('.leader-board-messages').show()
   $(`*[data-commentid="${response.game.id}"]`).text(response.game.comment)
   $(`*[data-formid="${response.game.id}"]`).remove()
@@ -25,9 +23,7 @@ const onCreateCommentSuccess = function (response) {
   $('.leader-board-messages').css('text-align', 'center')
   ui.hideLeaderBoardMessage()
 }
-const onCreateCommentFailure = function (error) {
-  console.log('onCreateCommentFAILED! ui.js, ')
-  console.log(error)
+const onCreateCommentFailure = function () {
 }
 module.exports = {
   showCommentForm,
