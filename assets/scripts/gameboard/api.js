@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 const ui = require('./ui.js')
 
-const createGame = () => {
+const createGame = function () {
   createGameAPI()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)

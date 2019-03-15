@@ -6,6 +6,11 @@ const hideAuthMessage = () => {
   }, 3000)
 }
 
+const hideGameMessage = () => {
+  setTimeout(() => {
+    $('#game-message').hide()
+  }, 3000)
+}
 const onSignUpSuccess = function (data) {
   $('#auth-messages').show()
   $('#auth-messages').addClass('success')
@@ -37,6 +42,7 @@ const onSignInSuccess = function (data) {
   $('.game-board').show()
   $('#games-played').show()
   hideAuthMessage()
+  hideGameMessage()
   $('#sign-out').removeClass('hidden')
   $('#sign-out').show()
   $('#change-password').show()
@@ -108,6 +114,7 @@ const onChangePassSuccess = function () {
   $('#auth-messages').css('font-size', '20px')
   $('#auth-messages').removeClass('failure')
   hideAuthMessage()
+  $('#game-message').remove()
   $('#sign-up').hide()
   $('#create-score').show()
 }

@@ -9,6 +9,12 @@ const bear = '🐻'
 
 store.points = 0
 store.gameBoard = ['', '', '', '', '', '', '', '', '']
+//
+// const startTimer = function () {
+//   setTimeout(() => {
+//     winningGame()
+//   }, 60000)
+// }
 
 const freezeBoard = () => {
   for (let i = 0; i < store.gameBoard.length; i++) {
@@ -20,6 +26,7 @@ const resetGame = () => {
   api.createGame()
   for (let i = 0; i < store.gameBoard.length; i++) {
     $('#' + i).text('')
+    $('#' + i).unbind('click')
     $('#' + i).on('click', onBoxClick)
     $('#game-message').html('')
     $('#games-played').show()
@@ -60,20 +67,9 @@ const onBoxClick = function (event) {
   } else {
     api.patchGame(false)
   }
-  // }
-  // }
-  // See if somebody has won the game yet
   if (winningGame()) {
     $('#game-message').html(winningGame())
   }
-  // console.log($('#0').html())
-  // if ($('#').text() === '🐻') {
-  //   const countid1 += 1
-  //   (count % 2 === 0)
-  //   console.log('disappear')
-  //   let count = Math.floor(Math.random() * '')
-  //   (count % 2 === 1)
-  // }
 }
 const onDeleteGame = function (event) {
   event.preventDefault()
@@ -99,7 +95,7 @@ const onShowAllGames = function (event) {
     .catch(ui.onShowAllGamesFailure)
 }
 const addGameHandlers = function () {
-  $('.box').on('click', onBoxClick)
+  // $('.box').on('click', onBoxClick)
   $('#reset').on('click', resetGame)
   $('#games-played').on('click', onShowAllGames)
 }
