@@ -72,6 +72,7 @@ const onShowAllGamesSuccess = function (response) {
       // 'New Comment'
       const buttonText = comment ? 'Update Comment' : 'New Comment'
       // the comment and delete buttons will be on each single user ID
+      // and put into the leader board
       commentButton = `<button class="comment-button" data-buttonid="${gameId}">${buttonText}</button>`
       deleteButton = `<button class="delete-button" data-deleteid="${gameId}">Delete Game</button>`
     }
@@ -92,6 +93,7 @@ const onShowAllGamesFailure = function () {
 const onDeleteGameSuccess = function (data) {
   const gameId = data.game.id
   $('.leader-board-messages').show()
+  // Finds a specific game and removes a game
   $(`*[data-gameid="${gameId}"]`).parent().remove()
   $('.leader-board-messages').text('Game Deleted Successfully!')
   $('.leader-board-messages').css('background-color', '#8fff90')

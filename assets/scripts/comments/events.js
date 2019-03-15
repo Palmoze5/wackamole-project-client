@@ -42,8 +42,13 @@ const onDeleteComment = function (event) {
   $('form').trigger('reset')
 }
 const onCommentOpen = function (event) {
+  // dataset is a property of an HTML with 'data' in it
+  // looking into each div that displays single game and score information with
+  // form fields attached to them
   const gameId = event.target.dataset.buttonid
   ui.showCommentForm(gameId)
+  // creates an event handler for the specific form for that id to submit to
+  // the database
   $(`*[data-formid="${gameId}"]`).submit(onCreateComment)
 }
 // Click Event handlers for Creating, Reading All, Updating and Deleteing Comments
