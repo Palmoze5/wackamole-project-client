@@ -102,7 +102,6 @@ const onDeleteGameSuccess = function (data) {
 }
 
 const onDeleteGameFailure = function () {
-  //alert('Delete FAILED!!')
 }
 
 module.exports = {

@@ -1,5 +1,5 @@
 const store = require('../store.js')
-const createGame = require('../gameboard/api')
+// const createGame = require('../gameboard/api')
 const hideAuthMessage = () => {
   setTimeout(() => {
     $('#auth-messages').hide()
