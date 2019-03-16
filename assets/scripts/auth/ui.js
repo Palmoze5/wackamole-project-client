@@ -53,7 +53,7 @@ const onSignInSuccess = function (data) {
   $('#get-scores').show()
   $('#update-score').show()
   $('#delete-score').show()
-  createGame.createGame(data)
+  // createGame.createGame()
 }
 
 const onSignInFailure = function () {

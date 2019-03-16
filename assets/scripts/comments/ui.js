@@ -8,7 +8,7 @@ const showCommentForm = function (gameId) {
   } else {
     // if not, then put a form below
     $(`*[data-gameid="${gameId}"]`).append(
-      `<form data-formid="${gameId}"><input type="text" name="text" placeholder="Your Comment Here" required><input type="submit" value="submit"></form>`
+      `<form data-formid="${gameId}">!!<input type="text" name="text" placeholder="Your Comment Here" required><input type="submit" value="submit"></form>`
     )
   }
 }

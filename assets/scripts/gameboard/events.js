@@ -8,7 +8,7 @@ const commentEvents = require('../comments/events.js')
 const bear = '🐻'
 let time
 
-store.points = 0
+store.game.points = 0
 // the whole gameboard, which is an array that's initially empty
 store.gameBoard = ['', '', '', '', '', '', '', '', '']
 
@@ -68,7 +68,7 @@ const resetGame = () => {
 }
 
 const winningGame = function () {
-  const winningMessage = `Your scored ${store.points}! Press RESET button and Try Again!`
+  const winningMessage = `You scored ${store.game.points}! Press RESET button and Try Again!`
   $('#game-message').html(winningMessage)
   $('#game-message').css('font-size', '35px')
   $('#game-message').css('text-align', 'center')
@@ -77,8 +77,6 @@ const winningGame = function () {
   $('#game-message').show()
   freezeBoard()
   api.patchGame(true)
-  // Write code where after a game is over through winning/losing to display
-  // HTML of the scores and next to it a CRUD action of commentary
 }
 // this function fires when you click on a box.
 const onBoxClick = function (event) {
@@ -88,7 +86,7 @@ const onBoxClick = function (event) {
   // this is a conditional that states if the position on the board location has
   // an 'x' that means there's a bear in there
   if (store.gameBoard[idOfBoxClicked] === 'x') {
-    store.points++
+    store.game.points++
     $('#' + idOfBoxClicked).text('')
     store.gameBoard[idOfBoxClicked] = ''
     // the location of the box will generate a random number between 0 to 9

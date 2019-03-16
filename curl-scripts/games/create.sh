@@ -1,8 +1,6 @@
-curl https://localhost:4741/games -XPOST \
-  --header 'Content-Type: application/json' \
-  --include --data '
-  { "games": {
-    "comment": "'"${TEXT}"'"
-      }
-    }
-  '
+curl 'http://localhost:4741/games' \
+--include \
+--request POST \
+--header "Content-Type: application/json" \
+--header "Authorization: Token token=${TOKEN}"
+echo

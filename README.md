@@ -44,6 +44,20 @@ CSS,
 JavaScript,
 Rails.
 
+## Routes
+
+| Verb   | URI Pattern        | Request Body      | Headers   | Action              |
+|--------|--------------------|-------------------|-----------|---------------------|
+| POST   | `/sign-up`         | **credentials**   | N/A       | user sign-up        |
+| POST   | `/sign-in`         | **credentials**   | N/A       | user sign-in        |
+| DELETE | `/sign-out`        | N/A               | **Token** | user sign-out       |
+| PATCH  | `/change-password` | **passwords**     | **Token** | change password     |
+|        |                 |                      |           |               |
+| GET    | `/games`        | N/A                  | N/A       | index games   |
+| POST   | `/games`        | `game: {}`           | **Token** | create review |
+| PATCH  | `/games/:id`    | **review delta**     | **Token** | update review |
+| DELETE | `/games/:id`    | N/A                  | **Token** | delete review |
+
 ## User Stories
 #### 1.) As a user, I want to be able to < sign up & sign in > so that < I can play the wackamole game.
 #### 2.) As a user, I want to be able to sign up and sign in, so that I can create, view, update and delete my own comments after each game played.

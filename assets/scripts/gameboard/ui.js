@@ -18,15 +18,15 @@ const hideLeaderBoardMessage = () => {
 // }
 
 const createGameSuccess = function (data) {
+  store.game = data.game
+  // startTimer()
   $('.game-board').show()
-  $('#games-played').show()
+  $('#alert()').show()
   $('#game-message').show()
   $('#game-message').text('Enjoy the game!')
   $('#game-message').css('background-color', '#8fff90')
   $('#game-message').css('font-size', '20px')
   $('#game-message').css('text-align', 'center')
-  store.game = data.game
-  // startTimer()
 }
 
 const createGameFailure = function () {
@@ -38,7 +38,7 @@ const createGameFailure = function () {
 const updateGameSuccess = function (data) {
   $('#message').text('Game Updated Successfully')
   $('#message').css('background-color', '#8fff90')
-  store.game = data.game
+  // store.game = data.game
 }
 
 const updateGameFailure = function () {
@@ -48,6 +48,7 @@ const updateGameFailure = function () {
 
 const onShowAllGamesSuccess = function (response) {
   $('#games-played-message').show()
+  $('#leader-board').html('')
   $('#leader-board-title').text('Leader Score board')
   $('#games-played-message').css('background-color', '#8fff90')
   // for loop that goes through the games array and iterates in each property
@@ -101,7 +102,7 @@ const onDeleteGameSuccess = function (data) {
 }
 
 const onDeleteGameFailure = function () {
-  alert('Delete FAILED!!')
+  //alert('Delete FAILED!!')
 }
 
 module.exports = {

@@ -10,21 +10,20 @@ const createGame = function () {
     .catch(ui.createGameFailure)
 }
 
-const createGameAPI = function (data) {
+const createGameAPI = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
     headers: {
       'Authorization': 'Token token=' + store.user.token
-    },
-    data: data
+    }
   })
 }
 
 const patchGame = function (over) {
   const payload = {
     'game': {
-      'points': 1,
+      'points': store.game.points,
       'over': over
     }
   }
