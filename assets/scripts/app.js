@@ -9,6 +9,7 @@ $('#update-score').hide()
 $('.game-board').hide()
 
 $(() => {
+  window.alert = function () { return false }
   authEvents.addHandlers()
   gameEvents.addGameHandlers()
 })

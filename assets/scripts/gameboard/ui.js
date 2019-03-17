@@ -21,7 +21,7 @@ const createGameSuccess = function (data) {
   store.game = data.game
   // startTimer()
   $('.game-board').show()
-  $('#alert()').show()
+  // $('#alert()').show()
   $('#game-message').show()
   $('#game-message').text('Enjoy the game!')
   $('#game-message').css('background-color', '#8fff90')
