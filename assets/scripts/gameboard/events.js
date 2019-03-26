@@ -5,7 +5,7 @@ const ui = require('./ui.js')
 const store = require('../store.js')
 const commentEvents = require('../comments/events.js')
 
-const bear = '🐻'
+const bear = '🐮'
 let time
 
 store.game.points = 0

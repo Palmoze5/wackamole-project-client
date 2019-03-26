@@ -1,32 +1,35 @@
 @import '~bootstrap/scss/bootstrap';
 
-$background-color: #56b000;
+$background-color: #FFCE0D;
 $white: #fff;
 $grey: rgb(128, 128, 128);
 $font-color: #fc0;
 $black: #000;
-$dark-yellow: #fc0;
+$dark-yellow: #CCCC00;
 $mocassin: #ffe4b5;
 $red: #dc143c;
 $blue: #00f;
+$font: #0D2CFF;
+$dark-grey: #C0C0C0;
+$green: #8ACC26;
 
 body {
   background-color: $background-color;
 }
 
 form {
-  color: $dark-yellow;
+  color: $font;
   text-align: center;
 }
 
 h1 {
-  color: $dark-yellow;
+  color: $font;
   font-size: 75px;
   text-align: center;
 }
 
-h2 {
-  color: $dark-yellow;
+h2, h3 {
+  color: $font;
   font-size: 15px;
   text-align: center;
 }
@@ -47,7 +50,7 @@ legend {
 }
 
 .game-div {
-  background-color: $dark-yellow;
+  background-color: $dark-grey;
   border: 1px solid;
 }
 
@@ -106,9 +109,9 @@ button {
 
 .col-4,  {
   align-items: center;
-  border-bottom: 1px solid;
-  border-right: 1px solid;
-  color: $font-color;
+  // border-bottom: 1px solid;
+  // border-right: 1px solid;
+  // color: $font-color;
   display: flex;
   font-size: 8rem;
   height: calc(100% / 3);
@@ -118,10 +121,21 @@ button {
 
 .box {
   align-items: center;
-  border: 1px solid $black;
-  color: $font-color;
+  // border: 1px solid $black;
+  // color: $font-color;
   display: flex;
   height: 10rem;
   justify-content: center;
   border: 20px 30px solid $black;
+}
+
+.game-board {
+  cursor: url('GaLogo.png'), auto;
+  background: url('dirt.svg') repeat, $green;
+  background-size: 440px;
+  border: 1px solid $black;
+}
+
+#reset, #games-played {
+ background: white;
 }
