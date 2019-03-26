@@ -1,17 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
 
-$background-color: #FFCE0D;
+$background-color: #ffce0d;
 $white: #fff;
 $grey: rgb(128, 128, 128);
 $font-color: #fc0;
 $black: #000;
-$dark-yellow: #CCCC00;
+$dark-yellow: #cc0;
 $mocassin: #ffe4b5;
 $red: #dc143c;
 $blue: #00f;
-$font: #0D2CFF;
-$dark-grey: #C0C0C0;
-$green: #8ACC26;
+$font: #0d2cff;
+$dark-grey: #c0c0c0;
+$green: #8acc26;
 
 body {
   background-color: $background-color;
@@ -28,7 +28,13 @@ h1 {
   text-align: center;
 }
 
-h2, h3 {
+h2 {
+  color: $font;
+  font-size: 15px;
+  text-align: center;
+}
+
+h3 {
   color: $font;
   font-size: 15px;
   text-align: center;
@@ -123,19 +129,23 @@ button {
   align-items: center;
   // border: 1px solid $black;
   // color: $font-color;
+  border: 20px 30px solid $black;
   display: flex;
   height: 10rem;
   justify-content: center;
-  border: 20px 30px solid $black;
 }
 
 .game-board {
-  cursor: url('GaLogo.png'), auto;
   background: url('dirt.svg') repeat, $green;
   background-size: 440px;
   border: 1px solid $black;
+  cursor: url('GaLogo.png'), auto;
 }
 
-#reset, #games-played {
- background: white;
+#reset {
+  background: $white;
+}
+
+#games-played {
+  background: $white;
 }
