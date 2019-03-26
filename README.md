@@ -76,9 +76,9 @@ https://github.com/Palmoze5/wackamole-project-api
 ### API Deployed:
 https://serene-reef-91665.herokuapp.com
 ### Client repository on Github:
-https://github.com/Palmoze5/wackamole-project-client
+https://github.com/Palmoze5/holeecow
 ### Live Hosted client site:
-https://anthonypalmoze.com/wackamole-project-client/
+https://anthonypalmoze.com/holeecow
 
 ## Wireframes & ERD
 ### Wireframe Link:

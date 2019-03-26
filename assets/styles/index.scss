@@ -136,10 +136,10 @@ button {
 }
 
 .game-board {
-  background: url('dirt.svg') repeat, $green;
+  background: url('public/dirt.svg') repeat, $green;
   background-size: 440px;
   border: 1px solid $black;
-  cursor: url('GaLogo.png'), auto;
+  cursor: url('../public/GaLogo.png'), auto;
 }
 
 #reset {
