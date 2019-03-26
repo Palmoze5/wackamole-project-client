@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Hole-E-Cow</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <h1>🐮 Hole-E-Cow! 🐮</h1>
+  <h2><img src="/public/GaLogo.png"> A General Assembly, "Wack-A-Mole" type game <img src="/public/GaLogo.png"></h2>
+  <!-- <h3>Developed by Anthony S. Palmoze </h3> -->
+
+  <div id="auth-messages"></div>
+
+  <form id="sign-up" class="border">
+    <fieldset>
+      <legend>Sign up</legend>
+      <input type="text" name="credentials[email]" placeholder="Email" required>
+      <input type="password" name="credentials[password]" placeholder="Password" required>
+      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
+      <input type="submit" value="Sign up">
+    </fieldset>
+  </form>
+
+  <form id="sign-in" class="border">
+    <fieldset>
+      <legend>Sign in</legend>
+      <input type="text" name="credentials[email]" placeholder="Email" required>
+      <input type="password" name="credentials[password]" placeholder="Password" required>
+      <input type="submit" value="Sign in">
+    </fieldset>
+  </form>
+
+  <form id="change-password" class="border hidden">
+    <fieldset>
+      <legend>Change Password?</legend>
+      <input type="password" name="passwords[old]" placeholder="Old Password" required>
+      <input type="password" name="passwords[new]" placeholder="New Password" required>
+      <input type="submit" value="Change Password">
+    </fieldset>
+  </form>
+
+  <form id="sign-out" class="border hidden">
+    <fieldset>
+      <legend>Sign Out</legend>
+      <input type="submit" value="Sign out">
+    </fieldset>
+  </form>
+
+
+  <div class="container mt-4"></div>
+    <div id="game-message"></div>
+    <button id="reset" class="game-board">Reset Game</button>
+    <div class="game-board">
+      <div class="row">
+        <div id="0" class="col-4 box brown"></div>
+        <div id="1" class="col-4 box brown"></div>
+        <div id="2" class="col-4 box brown"></div>
+      </div>
+      <!-- <div id="first" class="game-field"> -->
+      <div class="row">
+        <div id="3" class="col-4 box brown"></div>
+        <div id="4" class="col-4 box brown"></div>
+        <div id="5" class="col-4 box brown"></div>
+      </div>
+
+      <div class="row">
+        <div id="6" class="col-4 box brown"></div>
+        <div id="7" class="col-4 box brown"></div>
+        <div id="8" class="col-4 box brown"></div>
+      </div>
+      </div>
+
+      <div id="games-played-message">
+        <h4 id="leader-board-title"></h4>
+        <div class="leader-board-messages"></div>
+        <div id="leader-board"></div>
+        <div class="leader-board-messages"></div>
+      </div>
+      <button id="games-played" class="game-board">View All Games Played</button>
+
+    </body>
+    <footer><h3> A. Palmoze &#169; 2019 </h3></footer>
+</html>
